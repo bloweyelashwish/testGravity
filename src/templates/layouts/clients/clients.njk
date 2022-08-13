@@ -1,0 +1,30 @@
+{% import '../../macro.njk' as macro %}
+
+{% set clientsSection = {
+	title: 'Our Clients',
+	text: 'Our favorite brands are our friends! We help them to achieve their goals, they help us to stay sharp.',
+	companies: ['../../../img/clients/xiaomi.svg', '../../../img/clients/tinder.svg', '../../../img/clients/apple.svg', '../../../img/clients/nike.svg', '../../../img/clients/amd.svg']
+}%}
+
+{% macro ClientsBlock() %}
+<section class="clients">
+	<div class="clients__container container grid">
+		<h2 class="clients__title title">{{ clientsSection.title }}</h2>
+
+		<div class="clients__text-content">
+			<div class="clients__subtitle">
+			{{ macro.SectionName('worked with') }}
+			</div>
+			<p class="clients__text">{{ clientsSection.text }}</p>
+		</div>
+
+		<div class="clients__companies flex">
+			{% for company in clientsSection.companies %}
+				<div class="clients__company">
+					<img src="{{ company }}" alt="Client's icon">
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endmacro %}

@@ -1,0 +1,24 @@
+{% import '../../macro.njk' as macro %}
+
+
+<header class="header">
+	<div class="header__container container flex">
+
+		<div class="header__logo">
+			{% include './logo.svg' %}
+		</div>
+
+		<div class="header__search" data-search-header>
+			{{ macro.SearchBar('search-bar--desktop') }}
+		</div>
+
+		<div class="header__nav-toggle">
+			{% include './nav-toggle.njk' %}
+		</div>
+
+		<div class="header__navigation" aria-hidden='true' data-menu>
+			{% include './navigation.njk' %}
+		</div>
+
+	</div>
+</header>

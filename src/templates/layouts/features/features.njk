@@ -1,0 +1,42 @@
+{% import '../../macro.njk' as macro %}
+
+{% set featuresSection = {
+	title: 'Well thought with super easy to use',
+	description: 'As we approached the palace I could see through the great windows of the first floor the brilliantly illuminated audience chamber of Than Kosis. The immense hall was crowded with nobles and their women.',
+	media: {
+		imgSpread: { url: '../../../img/features/imageSpread.png', alt: 'imageAlt'},
+		imgCentered: { url: '../../../img/features/imageCentered.png', alt: 'imageAlt'}
+	},
+	slogans: [{text: 'Ultimate Result', iconUrl: '../../../img/features/100icon.svg',iconAlt: 'imageAlt'}, {text: 'Minimal Design', iconUrl: '../../../img/features/bagicon.svg', iconAlt: 'imageAlt'}]
+}%}
+
+{% macro FeaturesBlock() %}
+<section class="features">
+	<div class="features__container grid">
+		<div class="features__images">
+			<div class="features__image image image--spread">
+				<img src="{{ featuresSection.media.imgSpread.url }}" alt="{{ featuresSection.media.imgSpread.alt }}" width="570" height="417">
+			</div>
+
+			<div class="features__image image image--centered">
+				<img src="{{ featuresSection.media.imgCentered.url }}" alt="{{ featuresSection.media.imgCentered.alt }}" width="350" height="453">
+			</div>
+		</div>
+
+		<div class="features__main-content">
+			<h2 class="features__title title">{{ featuresSection.title }}</h2>
+			<p class="features__description text">{{ featuresSection.description }}</p>
+
+		<div class="features__slogans">
+
+			{% for slogan in featuresSection.slogans %}
+				<div class="features__slogan flex">
+					<img src="{{ slogan.iconUrl }}" alt="{{ slogan.iconAlt }}">
+					<p>{{ slogan.text }}</p>
+				</div>
+			{% endfor %}		
+					
+		</div>
+	</div>
+</section>
+{% endmacro %}

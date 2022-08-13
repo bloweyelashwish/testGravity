@@ -1,0 +1,77 @@
+@use "../../util/" as *;
+
+.services {
+	padding-block: 4rem 5.7rem;
+
+	&__container {
+
+		grid-template-areas: 
+		". subtitle ."
+		". title ."
+		". menu ."
+		". slider ."
+		". arrows .";
+
+		grid-template-columns: minmax(1rem, 1fr) minmax(1rem,53rem) minmax(1rem, 1fr);
+
+		@include breakpoint(large) {
+			grid-template-areas: ". subtitle . ."
+			". title menu ."
+			". slider slider ."
+			". arrows . .";
+	
+			grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 42.8rem) minmax(1rem, 22.8rem) minmax(1rem, 1fr);
+			column-gap: 2rem;
+		}
+
+		overflow: hidden;
+	}
+	
+	&__title {
+		grid-area: title;
+		margin-bottom: 2rem;
+
+		@include breakpoint(large) {
+			max-width: 25ch;
+			margin-bottom: 5.65rem;
+		}
+	}
+
+	&__subtitle {
+		grid-area: subtitle;
+		@include breakpoint(large) {
+		}
+	}
+
+	&__menu {
+		grid-area: menu;
+		margin-bottom: 1.8rem;
+		justify-self: start;
+		text-align: left;
+
+		@include breakpoint(large) {
+			margin-bottom: 0;
+			max-width: max-content;
+		}
+	}
+
+	&__slider {
+		grid-area: slider;
+		margin-bottom: 1.5rem;
+
+		@include breakpoint(medium) {
+			margin-bottom: 2rem;
+		}
+
+		@include breakpoint(large) {
+			margin-bottom: 3.12rem;
+		}
+	}
+
+	&__arrows {
+		grid-area: arrows;
+
+		@include breakpoint(large) {
+		}
+	}
+}

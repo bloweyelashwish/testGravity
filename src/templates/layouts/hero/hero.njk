@@ -1,0 +1,55 @@
+{% import '../../macro.njk' as macro %}
+
+{% set hero = {
+	img: '../../../img/hero/hero-image.jpg',
+	imgAlt: 'Hero image',
+	video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aciYiIVkpI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+	videoAlt: 'Hero video',
+	videoPoster: '../../../img/hero/video-placeholder.jpg',
+	slides: [{title: 'Work around you and your team', description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'}, {title: 'Work around you and your team', description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'}]
+} %}
+
+{% macro HeroBlock() %}
+<section class="hero" id="home">
+	<div class="hero__container grid">
+		<article class="hero__main-content content-hero">
+
+			<div class="content-hero__slider slider-hero slider-hero-js">
+
+				{% for slide in hero.slides %}
+					<div class="slider-hero__slide slide-hero">
+						<h1 class="slide-hero__title">{{ slide.title }}</h1>
+						<p class="slide-hero__description text"> {{ slide.description }}</p>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="hero__btn" data-btn-modal-open>
+						{{ macro.Btn('button', 'primary', 'Get Started') }}
+			</div>
+
+			<div class="hero__form" data-form-modal>
+				<div class="hero__tablist flex">
+					<button class="hero__tab tab js-trigger-tab selected" data-trigger="js-sign-up">Sign Up</button>
+					<button class="hero__tab tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
+					<div class="hero__tab tab tab--close js-close-form"></div>
+				</div>
+
+				<div class="hero__form-content">
+					{% call macro.FormModal() %}
+					{% endcall %}
+				</div>
+			</div>
+		</article>
+
+		<div class="hero__video">
+			{# sdelat macro #}
+			{{ macro.Video() }}
+		</div>
+
+		<div class="hero__image">
+			<img src="{{ hero.img }}" alt="{{ hero.imgAlt }}" height="840" width="665">
+		</div>
+	</div>
+</section>
+{% endmacro %}

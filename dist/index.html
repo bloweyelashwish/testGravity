@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap&_v=20220813155635" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220813155635">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?_v=20220813155635" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css?_v=20220813155635" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="./js/app.min.js?_v=20220813155635"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20220813155635" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js?_v=20220813155635" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Gravity</title>
+  </head>
+  <body>
+    <div class="page-overlay"></div>
+
+    
+
+
+<header class="header">
+	<div class="header__container container flex">
+
+		<div class="header__logo">
+			<svg width="75" height="24" viewBox="0 0 75 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 0C3.648 0 0 3.648 0 9C0 14.256 3.72 17.856 9 17.856C11.376 17.856 13.752 17.376 16.008 16.176V7.488H9.504V10.224H12.984V14.232C11.784 14.904 10.296 15.12 9.024 15.12C5.376 15.12 3.168 12.312 3.168 8.808C3.168 5.424 5.52 2.736 9 2.736C10.584 2.736 12.288 3.288 13.44 4.392L15.672 2.136C13.872 0.503999 11.352 0 9 0Z" fill="#222222"/>
+<path d="M24.6637 5.616C23.1517 5.616 21.8797 6.408 21.2557 7.728H21.2077V5.904H18.3277V17.424H21.2077V11.424C21.2077 9.888 22.1197 8.352 24.3037 8.352C24.7357 8.352 25.1437 8.424 25.6957 8.568V5.784C25.3117 5.688 25.0957 5.616 24.6637 5.616Z" fill="#222222"/>
+<path d="M31.5278 5.616C29.2718 5.616 27.6638 6.408 26.6318 7.464L28.1438 8.976C28.9358 8.256 30.0158 7.776 31.2158 7.776C32.7998 7.776 33.8558 8.568 33.8558 9.912V10.248H32.9678C28.0238 10.248 25.8878 11.592 25.8878 14.256C25.8878 16.368 27.7118 17.712 30.0878 17.712C31.6238 17.712 32.9678 17.136 33.7838 15.84H33.8558V17.424H36.4478V10.536C36.4478 7.824 35.4638 5.616 31.5278 5.616ZM28.7678 14.04C28.7678 12.816 30.3038 12.264 32.8478 12.264H33.6878V12.984C33.6878 14.448 32.7758 15.552 30.8078 15.552C29.7278 15.552 28.7678 15.024 28.7678 14.04Z" fill="#222222"/>
+<path d="M36.9864 5.904L41.6904 17.424H44.7624L49.2984 5.904H46.3464L43.2504 13.968H43.2024L40.1304 5.904H36.9864Z" fill="#222222"/>
+<path d="M51.4557 0.263999C50.4237 0.263999 49.6317 1.056 49.6317 1.992C49.6317 2.928 50.4237 3.72 51.4557 3.72C52.4878 3.72 53.3278 3.024 53.3278 1.992C53.3278 1.008 52.5117 0.263999 51.4557 0.263999ZM50.0397 5.904V17.424H52.9198V5.904H50.0397Z" fill="#222222"/>
+<path d="M56.2581 2.568V5.904H53.8821V8.352H56.2581V13.752C56.2581 16.656 57.3141 17.712 60.0261 17.712C60.6741 17.712 61.7541 17.592 62.3061 17.328V14.904C62.0661 15.096 61.4661 15.264 60.7461 15.264C59.6181 15.264 59.1381 14.688 59.1381 13.464V8.352H62.3061V5.904H59.1381V2.568H56.2581Z" fill="#222222"/>
+<path d="M61.9942 5.904L66.9142 17.52L66.4102 18.768C65.8822 20.04 65.5943 20.592 64.0823 20.592C63.5783 20.592 63.0742 20.472 62.6182 20.304L62.2582 22.896C62.9782 23.088 63.7222 23.184 64.4662 23.184C67.3462 23.184 68.1143 21.768 69.0502 19.392L74.3063 5.904H71.3063L68.4262 13.896H68.3783L65.1622 5.904H61.9942Z" fill="#222222"/>
+</svg>
+
+		</div>
+
+		<div class="header__search" data-search-header>
+			
+
+
+<div class="search-bar search-bar--desktop" data-search>
+	<input type="text" class="search-bar__input" placeholder="Type to search..." aria-label="search" data-search-input>
+	<button class="search-bar__submit" aria-label="submit search" data-search-submit>
+		<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.5C0 3.80557 3.80557 0 8.5 0C13.1944 0 17 3.80557 17 8.5C17 10.3205 16.4277 12.0073 15.4532 13.3903L18.8922 16.827C19.2831 17.2176 19.2831 17.8511 18.8923 18.2417L18.2444 18.8891C17.854 19.2793 17.2212 19.2793 16.8307 18.8891L13.3915 15.4524C12.0083 16.4274 10.321 17 8.5 17C3.80557 17 0 13.1944 0 8.5ZM8.49996 14.5714C5.15218 14.5714 2.42854 11.8478 2.42854 8.5C2.42854 5.15221 5.15218 2.42857 8.49996 2.42857C11.8477 2.42857 14.5714 5.15221 14.5714 8.5C14.5714 11.8478 11.8477 14.5714 8.49996 14.5714Z" fill="#222222"/>
+</svg>
+	</button>
+</div>
+
+		</div>
+
+		<div class="header__nav-toggle">
+			<button class="nav-toggle" data-nav-toggle>
+	
+	<span class="nav-toggle__line"></span>
+	
+	<span class="nav-toggle__line"></span>
+	
+</button>
+		</div>
+
+		<div class="header__navigation" aria-hidden='true' data-menu>
+			
+
+
+
+<nav class="navigation">
+	<ul class="navigation__list flex">
+
+	
+		<li class="navigation__item">
+			<a href="#home" class="navigation__link">home</a>
+		</li>
+	
+		<li class="navigation__item">
+			<a href="#services" class="navigation__link">services</a>
+		</li>
+	
+		<li class="navigation__item">
+			<a href="#works" class="navigation__link">works</a>
+		</li>
+	
+		<li class="navigation__item">
+			<a href="#testimonials" class="navigation__link">testimonials</a>
+		</li>
+	
+
+	
+
+
+<div class="search-bar search-bar--mobile" data-search>
+	<input type="text" class="search-bar__input" placeholder="Type to search..." aria-label="search" data-search-input>
+	<button class="search-bar__submit" aria-label="submit search" data-search-submit>
+		<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.5C0 3.80557 3.80557 0 8.5 0C13.1944 0 17 3.80557 17 8.5C17 10.3205 16.4277 12.0073 15.4532 13.3903L18.8922 16.827C19.2831 17.2176 19.2831 17.8511 18.8923 18.2417L18.2444 18.8891C17.854 19.2793 17.2212 19.2793 16.8307 18.8891L13.3915 15.4524C12.0083 16.4274 10.321 17 8.5 17C3.80557 17 0 13.1944 0 8.5ZM8.49996 14.5714C5.15218 14.5714 2.42854 11.8478 2.42854 8.5C2.42854 5.15221 5.15218 2.42857 8.49996 2.42857C11.8477 2.42857 14.5714 5.15221 14.5714 8.5C14.5714 11.8478 11.8477 14.5714 8.49996 14.5714Z" fill="#222222"/>
+</svg>
+	</button>
+</div>
+
+	
+	</ul>
+</nav>
+
+		</div>
+
+	</div>
+</header>
+
+    <main>
+      
+
+	
+<section class="hero" id="home">
+	<div class="hero__container grid">
+		<article class="hero__main-content content-hero">
+
+			<div class="content-hero__slider slider-hero slider-hero-js">
+
+				
+					<div class="slider-hero__slide slide-hero">
+						<h1 class="slide-hero__title">Work around you and your team</h1>
+						<p class="slide-hero__description text"> From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.</p>
+					</div>
+				
+					<div class="slider-hero__slide slide-hero">
+						<h1 class="slide-hero__title">Work around you and your team</h1>
+						<p class="slide-hero__description text"> From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.</p>
+					</div>
+				
+			</div>
+
+			<div class="hero__btn" data-btn-modal-open>
+						
+	<button type="button" class="btn btn--primary">Get Started</button>
+
+			</div>
+
+			<div class="hero__form" data-form-modal>
+				<div class="hero__tablist flex">
+					<button class="hero__tab tab js-trigger-tab selected" data-trigger="js-sign-up">Sign Up</button>
+					<button class="hero__tab tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
+					<div class="hero__tab tab tab--close js-close-form"></div>
+				</div>
+
+				<div class="hero__form-content">
+					
+		
+	<form action="https://httpbin.org/post" class="form js-sign-up " method="POST">
+	
+			<div class="form__registration js-sign-up">
+				<h3 class="form__title">Sign Up</h3>
+				<div class="form__group">
+					<label class="form__label" for="firstName">first name</label>
+					<input class="form__input" type="text" name="firstName" id="firstName" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="lastName">last name</label>
+					<input class="form__input" type="text" name="lastName" id="lastName" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="registration-email">email</label>
+					<input class="form__input" type="email" name="email" id="registration-email" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="registration-password">enter your password</label>
+					<input class="form__input" type="password" name="password" id="registration-password" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="registration-password2">confirm your password</label>
+					<input class="form__input" type="password" name="password2" id="registration-password2" autocomplete="off" required>
+				</div>
+
+				<div class="form__button">
+				
+	<button type="submit" class="btn btn--primary">Get Started</button>
+
+				</div>
+			</div>
+		
+	</form>
+
+
+		
+	<form action="https://httpbin.org/post" class="form js-log-in is-disabled" method="POST">
+	
+			<div class="form__log-in">
+				<h3 class="form__title">Log In</h3>
+			
+				<div class="form__group">
+					<label class="form__label" for="email">email</label>
+					<input class="form__input" type="email" name="email" id="email" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="password">enter your password</label>
+					<input class="form__input" type="password" name="password" id="password" autocomplete="off" required>
+				</div>
+
+				<div class="form__button">
+				
+	<button type="submit" class="btn btn--primary">Log In</button>
+
+				</div>
+			</div>
+		
+	</form>
+
+
+				</div>
+			</div>
+		</article>
+
+		<div class="hero__video">
+			
+			
+	<div class="video" data-video data-src="https://www.youtube.com/embed/XnzxEGLaPxs">
+		<picture><source srcset="img/hero/video-placeholder.webp" type="image/webp"><img class="video__placeholder" src="img/hero/video-placeholder.jpg" alt="Video placeholder"></picture>
+		<div class="video__btn btn--center">
+			
+	<button type="button" class="btn btn--play"></button>
+
+		</div>
+	</div>
+
+		</div>
+
+		<div class="hero__image">
+			<picture><source srcset="../../../img/hero/hero-image.webp" type="image/webp"><img src="../../../img/hero/hero-image.jpg" alt="Hero image" height="840" width="665"></picture>
+		</div>
+	</div>
+</section>
+
+
+	
+<section class="remark">
+	<div class="remark__container container flex">
+		<div class="remark__image">
+			<picture><source srcset="../../../img/remark/remarkMainImage.webp" type="image/webp"><img src="../../../img/remark/remarkMainImage.jpg" alt="Image placeholder text" width="444" height="564"></picture>
+		</div>
+
+		<div class="remark__main-content">
+			<h2 class="remark__title title">We solve digital problems with an outstanding creative flare</h2>
+			<p class="remark__text text">The best time to view the moon, obviously, is at night when there are few clouds and the weather is accommodating for a long and lasting study.</p>
+			<p class="remark__text text">For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.</p>
+
+			<div class="remark__author-meta flex">
+				<div class="remark__author-image">
+					<picture><source srcset="../../../img/remark/authorPhoto.webp" type="image/webp"><img class="remark__author-image" src="../../../img/remark/authorPhoto.jpg" width="65" height="65"></picture>
+				</div>
+				<div class="remark__author-details">
+					<div class="remark__author-name">Denis Shepovalov</div>
+					<div class="remark__author-position">Co-Founder &amp; CEO</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	
+<section class="services" id="services">
+	<div class="services__container grid">
+		<div class="services__subtitle subtitle">
+		
+	<span class="section-name">services</span>
+
+		</div>
+		
+		<h2 class="services__title title">
+			We love work hard and explore new things that’s why we cover lot of things. Check our service list and view details
+		</h2>
+
+		<nav class="services__menu">
+			
+		<ul class="list list--grid">
+			
+				<li class="list__item"><a class="list__link" href="#">Multimedia</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Creative Strategy</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Interactive design</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">UI/UX </a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Packaging</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Coding</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Branding</a></li>
+			
+		</ul>
+
+		</nav>
+
+		<div class="services__slider slider-services slider-services-js">
+			
+				<div class="slider-services__slide">
+					<picture><source srcset="../../../img/services/slide.webp" type="image/webp"><img src="../../../img/services/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<div class="video__btn btn btn--center">
+					
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+				</div>
+			
+				<div class="slider-services__slide">
+					<picture><source srcset="../../../img/services/slide.webp" type="image/webp"><img src="../../../img/services/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<div class="video__btn btn btn--center">
+					
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+				</div>
+			
+				<div class="slider-services__slide">
+					<picture><source srcset="../../../img/services/slide.webp" type="image/webp"><img src="../../../img/services/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<div class="video__btn btn btn--center">
+					
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+				</div>
+			
+				<div class="slider-services__slide">
+					<picture><source srcset="../../../img/services/slide.webp" type="image/webp"><img src="../../../img/services/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<div class="video__btn btn btn--center">
+					
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+				</div>
+			
+				<div class="slider-services__slide">
+					<picture><source srcset="../../../img/services/slide.webp" type="image/webp"><img src="../../../img/services/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<div class="video__btn btn btn--center">
+					
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+				</div>
+			
+		</div>
+
+		<div class="services__arrows">
+			
+	<div class="arrows flex">
+		<div class="arrows__arrow arrow arrow--prev js-prev-services"></div>
+		<div class="arrows__arrow arrow arrow--next js-next-services"></div>
+	</div>
+
+		</div>
+
+	</div>
+</section>
+
+
+	
+<section class="features">
+	<div class="features__container grid">
+		<div class="features__images">
+			<div class="features__image image image--spread">
+				<picture><source srcset="../../../img/features/imageSpread.webp" type="image/webp"><img src="../../../img/features/imageSpread.png" alt="imageAlt" width="570" height="417"></picture>
+			</div>
+
+			<div class="features__image image image--centered">
+				<picture><source srcset="../../../img/features/imageCentered.webp" type="image/webp"><img src="../../../img/features/imageCentered.png" alt="imageAlt" width="350" height="453"></picture>
+			</div>
+		</div>
+
+		<div class="features__main-content">
+			<h2 class="features__title title">Well thought with super easy to use</h2>
+			<p class="features__description text">As we approached the palace I could see through the great windows of the first floor the brilliantly illuminated audience chamber of Than Kosis. The immense hall was crowded with nobles and their women.</p>
+
+		<div class="features__slogans">
+
+			
+				<div class="features__slogan flex">
+					<img src="../../../img/features/100icon.svg" alt="imageAlt">
+					<p>Ultimate Result</p>
+				</div>
+			
+				<div class="features__slogan flex">
+					<img src="../../../img/features/bagicon.svg" alt="imageAlt">
+					<p>Minimal Design</p>
+				</div>
+					
+					
+		</div>
+	</div>
+</section>
+
+
+	
+<section class="works" id="works">
+	<div class="works__container container">
+
+		<div class="works__subtitle">
+			
+	<span class="section-name">our works</span>
+
+		</div>
+
+		<div class="works__main-content flex">
+
+			<h2 class="works__title title">
+				Discover our Work
+			</h2>
+
+			<nav class="works__menu">
+				
+		<ul class="list list--flex">
+			
+				<li class="list__item"><a class="list__link" href="#">All</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Branding</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Web</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Development</a></li>
+			
+				<li class="list__item"><a class="list__link" href="#">Films</a></li>
+			
+		</ul>
+
+			</nav>
+		</div>
+
+		<div class="works__set grid">
+			
+				<div class="works__item">
+					
+					<div class="works__image">
+						<picture><source srcset="../../../img/works/1.webp" type="image/webp"><img src="../../../img/works/1.png" alt="Our work" width="350" height="450"></picture>
+					</div>
+					<div class="works__play-btn">
+						
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+
+				</div>
+			
+				<div class="works__item">
+					
+					<div class="works__image">
+						<picture><source srcset="../../../img/works/2.webp" type="image/webp"><img src="../../../img/works/2.png" alt="Our work" width="350" height="450"></picture>
+					</div>
+					<div class="works__play-btn">
+						
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+
+				</div>
+			
+				<div class="works__item">
+					
+					<div class="works__image">
+						<picture><source srcset="../../../img/works/3.webp" type="image/webp"><img src="../../../img/works/3.png" alt="Our work" width="350" height="450"></picture>
+					</div>
+					<div class="works__play-btn">
+						
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+
+				</div>
+			
+				<div class="works__item">
+					
+					<div class="works__image">
+						<picture><source srcset="../../../img/works/4.webp" type="image/webp"><img src="../../../img/works/4.png" alt="Our work" width="350" height="450"></picture>
+					</div>
+					<div class="works__play-btn">
+						
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+
+				</div>
+			
+				<div class="works__item">
+					
+					<div class="works__image">
+						<picture><source srcset="../../../img/works/5.webp" type="image/webp"><img src="../../../img/works/5.png" alt="Our work" width="350" height="450"></picture>
+					</div>
+					<div class="works__play-btn">
+						
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+
+				</div>
+			
+				<div class="works__item">
+					
+					<div class="works__image">
+						<picture><source srcset="../../../img/works/6.webp" type="image/webp"><img src="../../../img/works/6.png" alt="Our work" width="350" height="450"></picture>
+					</div>
+					<div class="works__play-btn">
+						
+	<button type="button" class="btn btn--play"></button>
+
+					</div>
+
+				</div>
+			
+		</div>
+
+		<div class="works__hyperlink flex">
+			<p class="works__text text">It picks up the words on the page and displays ads that are similar to those words. Then when someone either performs an action or clicks on your page you will get paid.</p>
+
+			<a class="works__btn btn btn--primary" href="#" target="_blank">see our works</a>
+		</div>
+
+	</div>
+</section>
+
+
+	
+<section class="testimonials" id="testimonials">
+	<div class="testimonials__container grid">
+
+
+		<div class="testimonials__slider slider-testimonials slider-testimonials-js">
+			
+			<div class="testimonials__slide">
+				<div class="testimonials__subtitle">
+					
+	<span class="section-name">Testimonials</span>
+
+				</div>
+				<div class="testimonials__quote title">
+					<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
+				</div>
+
+				<div class="testimonials__author-meta">
+					<p class="testimonials__author-name">Polina Kuzina</p>
+					<p class="testimonials__author-position text">Manager at Craftwork</p>
+				</div>
+
+				<div class="testimonials__author-image">
+					<picture><source srcset="../../../img/testimonials/Author.webp" type="image/webp"><img src="../../../img/testimonials/Author.png" alt="The portrait of Polina Kuzina"></picture>
+				</div>
+			</div>
+			
+			<div class="testimonials__slide">
+				<div class="testimonials__subtitle">
+					
+	<span class="section-name">Testimonials</span>
+
+				</div>
+				<div class="testimonials__quote title">
+					<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
+				</div>
+
+				<div class="testimonials__author-meta">
+					<p class="testimonials__author-name">Polina Kuzina</p>
+					<p class="testimonials__author-position text">Manager at Craftwork</p>
+				</div>
+
+				<div class="testimonials__author-image">
+					<picture><source srcset="../../../img/testimonials/Author.webp" type="image/webp"><img src="../../../img/testimonials/Author.png" alt="The portrait of Polina Kuzina"></picture>
+				</div>
+			</div>
+			
+			<div class="testimonials__slide">
+				<div class="testimonials__subtitle">
+					
+	<span class="section-name">Testimonials</span>
+
+				</div>
+				<div class="testimonials__quote title">
+					<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
+				</div>
+
+				<div class="testimonials__author-meta">
+					<p class="testimonials__author-name">Polina Kuzina</p>
+					<p class="testimonials__author-position text">Manager at Craftwork</p>
+				</div>
+
+				<div class="testimonials__author-image">
+					<picture><source srcset="../../../img/testimonials/Author.webp" type="image/webp"><img src="../../../img/testimonials/Author.png" alt="The portrait of Polina Kuzina"></picture>
+				</div>
+			</div>
+			
+			<div class="testimonials__slide">
+				<div class="testimonials__subtitle">
+					
+	<span class="section-name">Testimonials</span>
+
+				</div>
+				<div class="testimonials__quote title">
+					<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
+				</div>
+
+				<div class="testimonials__author-meta">
+					<p class="testimonials__author-name">Polina Kuzina</p>
+					<p class="testimonials__author-position text">Manager at Craftwork</p>
+				</div>
+
+				<div class="testimonials__author-image">
+					<picture><source srcset="../../../img/testimonials/Author.webp" type="image/webp"><img src="../../../img/testimonials/Author.png" alt="The portrait of Polina Kuzina"></picture>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="testimonials__arrows">
+			
+	<div class="arrows flex">
+		<div class="arrows__arrow arrow arrow--prev js-prev-testimonials"></div>
+		<div class="arrows__arrow arrow arrow--next js-next-testimonials"></div>
+	</div>
+
+		</div>
+	</div>
+</section>
+
+
+	
+<section class="clients">
+	<div class="clients__container container grid">
+		<h2 class="clients__title title">Our Clients</h2>
+
+		<div class="clients__text-content">
+			<div class="clients__subtitle">
+			
+	<span class="section-name">worked with</span>
+
+			</div>
+			<p class="clients__text">Our favorite brands are our friends! We help them to achieve their goals, they help us to stay sharp.</p>
+		</div>
+
+		<div class="clients__companies flex">
+			
+				<div class="clients__company">
+					<img src="../../../img/clients/xiaomi.svg" alt="Client's icon">
+				</div>
+			
+				<div class="clients__company">
+					<img src="../../../img/clients/tinder.svg" alt="Client's icon">
+				</div>
+			
+				<div class="clients__company">
+					<img src="../../../img/clients/apple.svg" alt="Client's icon">
+				</div>
+			
+				<div class="clients__company">
+					<img src="../../../img/clients/nike.svg" alt="Client's icon">
+				</div>
+			
+				<div class="clients__company">
+					<img src="../../../img/clients/amd.svg" alt="Client's icon">
+				</div>
+			
+		</div>
+	</div>
+</section>
+
+
+
+    </main>
+    
+    
+
+
+
+<footer class="footer">
+	<div class="footer__container container grid">
+
+		<div class="footer__content">
+			
+	<div class="logo">
+		<img src="../../../img/logo-footer.svg" alt="Website logo">
+	</div>
+
+		</div>
+
+	</div>
+</footer>
+  </body>
+</html>

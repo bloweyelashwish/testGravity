@@ -1,0 +1,44 @@
+{% import '../../macro.njk' as macro %}
+
+{% set servicesSection = {
+	title: 'We love work hard and explore new things that’s why we cover lot of things. Check our service list and view details',
+	menu: {
+		links: [{name: 'Multimedia', href: '#'}, {name: 'Creative Strategy', href: '#'}, {name: 'Interactive design', href: '#'}, {name: 'UI/UX ', href: '#'}, {name: 'Packaging', href: '#'}, {name: 'Coding', href: '#'}, {name: 'Branding', href: '#'}]
+	},
+	slides: [{imgUrl: '../../../img/services/slide.jpg', imgAlt: 'Image Alt'}, {imgUrl: '../../../img/services/slide.jpg', imgAlt: 'Image Alt'}, {imgUrl: '../../../img/services/slide.jpg', imgAlt: 'Image Alt'}, {imgUrl: '../../../img/services/slide.jpg', imgAlt: 'Image Alt'}, {imgUrl: '../../../img/services/slide.jpg', imgAlt: 'Image Alt'}]
+}%}
+
+
+{% macro ServicesBlock() %}
+<section class="services" id="services">
+	<div class="services__container grid">
+		<div class="services__subtitle subtitle">
+		{{ macro.SectionName('services') }}
+		</div>
+		
+		<h2 class="services__title title">
+			{{ servicesSection.title }}
+		</h2>
+
+		<nav class="services__menu">
+			{{ macro.SectionMenu(servicesSection.menu.links, 'list--grid') }}
+		</nav>
+
+		<div class="services__slider slider-services slider-services-js">
+			{% for slide in servicesSection.slides %}
+				<div class="slider-services__slide">
+					<img src="{{ slide.imgUrl }}" alt="{{ slide.imgAlt }}" width="825" height="500">
+					<div class="video__btn btn btn--center">
+					{{ macro.Btn('button', 'play') }}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="services__arrows">
+			{{ macro.SliderArrows('js-prev-services', 'js-next-services') }}
+		</div>
+
+	</div>
+</section>
+{% endmacro %}

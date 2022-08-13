@@ -1,0 +1,127 @@
+
+{% macro SearchBar(class) %}
+{% set searchIcon = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.5C0 3.80557 3.80557 0 8.5 0C13.1944 0 17 3.80557 17 8.5C17 10.3205 16.4277 12.0073 15.4532 13.3903L18.8922 16.827C19.2831 17.2176 19.2831 17.8511 18.8923 18.2417L18.2444 18.8891C17.854 19.2793 17.2212 19.2793 16.8307 18.8891L13.3915 15.4524C12.0083 16.4274 10.321 17 8.5 17C3.80557 17 0 13.1944 0 8.5ZM8.49996 14.5714C5.15218 14.5714 2.42854 11.8478 2.42854 8.5C2.42854 5.15221 5.15218 2.42857 8.49996 2.42857C11.8477 2.42857 14.5714 5.15221 14.5714 8.5C14.5714 11.8478 11.8477 14.5714 8.49996 14.5714Z" fill="#222222"/>
+</svg>' %}
+
+<div class="search-bar {{ class }}" data-search>
+	<input type="text" class="search-bar__input" placeholder="Type to search..." aria-label="search" data-search-input>
+	<button class="search-bar__submit" aria-label="submit search" data-search-submit>
+		{{ searchIcon | safe }}
+	</button>
+</div>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro Btn(type, class, text) %}
+	<button type="{{ type }}" class="btn btn--{{class}}">{{ text }}</button>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro FormModal(name) %}
+		{% call FormContent('js-sign-up') %}
+			<div class="form__registration js-sign-up">
+				<h3 class="form__title">Sign Up</h3>
+				<div class="form__group">
+					<label class="form__label" for="firstName">first name</label>
+					<input class="form__input" type="text" name="firstName" id="firstName" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="lastName">last name</label>
+					<input class="form__input" type="text" name="lastName" id="lastName" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="registration-email">email</label>
+					<input class="form__input" type="email" name="email" id="registration-email" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="registration-password">enter your password</label>
+					<input class="form__input" type="password" name="password" id="registration-password" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="registration-password2">confirm your password</label>
+					<input class="form__input" type="password" name="password2" id="registration-password2" autocomplete="off" required>
+				</div>
+
+				<div class="form__button">
+				{{ Btn( 'submit', 'primary', 'Get Started') }}
+				</div>
+			</div>
+		{% endcall %}
+
+		{% call FormContent('js-log-in','is-disabled') %}
+			<div class="form__log-in">
+				<h3 class="form__title">Log In</h3>
+			
+				<div class="form__group">
+					<label class="form__label" for="email">email</label>
+					<input class="form__input" type="email" name="email" id="email" autocomplete="off" required>
+				</div>
+
+				<div class="form__group">
+					<label class="form__label" for="password">enter your password</label>
+					<input class="form__input" type="password" name="password" id="password" autocomplete="off" required>
+				</div>
+
+				<div class="form__button">
+				{{ Btn( 'submit', 'primary', 'Log In') }}
+				</div>
+			</div>
+		{% endcall %}
+{% endmacro %} 
+
+{% macro FormContent(scriptClass, displayClass) %}
+	<form action="https://httpbin.org/post" class="form {{ scriptClass }} {{ displayClass }}" method="POST">
+	{{ caller() }}
+	</form>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro SectionName(name) %}
+	<span class="section-name">{{ name }}</span>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro SectionMenu(menu, modifier) %}
+		<ul class="list {{ modifier }}">
+			{% for link in menu %}
+				<li class="list__item"><a class="list__link" href="{{ link.href }}">{{ link.name }}</a></li>
+			{% endfor %}
+		</ul>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro SliderArrows(blockPrev, blockNext) %}
+	<div class="arrows flex">
+		<div class="arrows__arrow arrow arrow--prev {{ blockPrev }}"></div>
+		<div class="arrows__arrow arrow arrow--next {{ blockNext }}"></div>
+	</div>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro Logo(url) %}
+	<div class="logo">
+		<img src="{{ url }}" alt="Website logo">
+	</div>
+{% endmacro %}
+
+{# -------------------------- #}
+
+{% macro Video() %}
+	<div class="video" data-video data-src="https://www.youtube.com/embed/XnzxEGLaPxs">
+		<img class="video__placeholder" src="img/hero/video-placeholder.jpg" alt="Video placeholder">
+		<div class="video__btn btn--center">
+			{{ Btn('button', 'play') }}
+		</div>
+	</div>
+{% endmacro %}

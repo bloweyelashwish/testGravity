@@ -1,0 +1,33 @@
+{% extends "./layouts/base.njk" %}
+
+{% from './layouts/hero/hero.njk' import HeroBlock %}
+{% from './layouts/remark/remark.njk' import RemarkBlock %}
+{% from './layouts/services/services.njk' import ServicesBlock%}
+{% from './layouts/features/features.njk' import FeaturesBlock %}
+{% from './layouts/works/works.njk' import WorksBlock %}
+{% from './layouts/testimonials/testimonials.njk' import TestimonialsBlock %}
+{% from './layouts/clients/clients.njk' import ClientsBlock %}
+
+
+{% set title = 'Gravity' %} 
+
+
+
+
+{% block content %}
+
+	{{ HeroBlock() }}
+
+	{{ RemarkBlock() }}
+
+	{{ ServicesBlock() }}
+
+	{{ FeaturesBlock() }}
+
+	{{ WorksBlock() }}
+
+	{{ TestimonialsBlock() }}
+
+	{{ ClientsBlock() }}
+
+{% endblock %}

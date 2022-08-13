@@ -1,0 +1,53 @@
+@use "../../util/" as *;
+
+.header {
+	padding-block: 1em;
+
+	&__container {
+		justify-content: space-between;
+		align-items: center;
+	
+
+	@include breakpoint(medium) {
+			justify-content: space-between;
+			align-items: end;
+			padding-block: 2rem;
+		}
+	}
+
+	&__logo {
+		height: 25px;
+		align-self: center;
+		flex: 0 0 20px;
+	}
+
+	&__search {
+		margin-left: -3rem;
+		z-index: 6;
+	}
+
+	&__navigation {
+		position: fixed;
+		z-index: 6;
+		height: 100vh;
+		width: 100vw;
+		top: -100%;
+		left: 0;
+		opacity: 0;
+		padding-block: 20vh;
+		overflow-y: auto;
+		transition: top 350ms ease-in-out, opacity 250ms ease, background 350ms ease-in-out;
+
+		&.dropped {
+			top: 0;
+			opacity: 1;
+			background: linear-gradient(0deg, rgba(174,182,220,0.7514356084230567) 0%, rgba(111,108,130,1) 100%);
+		}
+	}
+
+	&__nav-toggle {
+		align-self: center;
+		z-index: 7;
+	}
+}
+
