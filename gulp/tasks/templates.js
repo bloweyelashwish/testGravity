@@ -14,7 +14,8 @@ export  const templates = () => {
       path: ['./src/templates/', './src/components/'],
       envOptions: {
         watch: true
-      }
+      },
+      manageEnv: mergeObj
     }))
     // .pipe(app.nunjucks.compile())
     .pipe(app.plugins.replace(/@img\//g, 'img/'))

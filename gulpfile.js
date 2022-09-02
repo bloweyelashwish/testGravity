@@ -44,7 +44,7 @@ function watcher() {
 const fonts = gulp.series(ttfToWoff2, fontsStyle)
 // const dev = gulp.series(reset, fonts, templates, styles, js, images, gulp.parallel(watcher, server))
 // const build = gulp.series(reset, fonts, templates, styles, js, images)
-const build = gulp.series(reset, fonts, templates, styles, js, images)
+const build = gulp.series(reset, templates, styles, js, images)
 const dev = gulp.series(build, gulp.parallel(watcher, server))
 
 // выполнение копирования файлов(начальный)

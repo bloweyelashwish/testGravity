@@ -1,0 +1,18 @@
+{% from '../search-bar/search-bar.njk' import SearchBar %}
+
+{% macro Navigation(menu) %}
+	<nav class="navigation">
+		<ul class="navigation__list flex">
+			{% for item in menu %}
+				<li class="navigation__item">
+					<a href="{{ item.link }}" class="navigation__link">{{ item.title }}</a>
+				</li>
+			{% endfor %}
+			<li class="navigation__link">
+				<div class="navigation__search-bar js-search-bar">
+					{{ SearchBar({ className: 'search-bar--mobile' }) }}
+				</div>
+			</li>
+		</ul>
+	</nav>
+{% endmacro %}
