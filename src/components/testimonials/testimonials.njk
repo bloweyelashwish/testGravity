@@ -1,6 +1,6 @@
 {% from '../slider/slider.njk' import SliderArrows %}
 
-{% set testimonialsSectionName = 'testomonials' %}
+{% set testimonialsSectionName = 'testimonials' %}
 
 {% set testimonialsSectionSlides = [
 	{
@@ -33,12 +33,26 @@
 	}
 ]%}
 
+{% set sliderOptions = {
+	infinite: true,
+	arrows: true,
+	slidesToShow: 1,
+	slidesToScroll: 1,		
+	prevArrow: '.js-prev-testimonials',
+	nextArrow: '.js-next-testimonials',
+	cssEase: 'linear',
+	speed: 800,
+	autoplay: true,
+	autoplaySpeed: 3000,
+	draggable: false
+} %}
+
 {% macro TestimonialsBlock() %}
 <section class="testimonials" id="testimonials">
 	<div class="testimonials__container grid">
 
 
-		<div class="testimonials__slider slider-testimonials slider-testimonials-js">
+		<div class="testimonials__slider slider-testimonials js-slider" data-options="{{ sliderOptions | dump }}">
 			
 			{% for slide in testimonialsSectionSlides %}
 				<div class="testimonials__slide">

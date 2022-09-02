@@ -1,10 +1,8 @@
 import webpHtmlNosvg from 'gulp-webp-html-nosvg'
 import versionNumber from 'gulp-version-number'
-import nunjucksRender from 'gulp-nunjucks-with-env';
+import nunjucksRender from 'gulp-nunjucks-render';
 
 export  const templates = () => {
-  nunjucksRender.nunjucks.configure(['./src']);
-  console.log(`${app.path.src.templates}*.njk`)
   return app.gulp.src(`${app.path.src.templates}*.njk`)
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
@@ -12,7 +10,12 @@ export  const templates = () => {
         message: 'Error: U+1F921 <%= error.message %>'
       }))
     )
-    .pipe(nunjucksRender())
+    .pipe(nunjucksRender({
+      path: ['./src/templates/', './src/components/'],
+      envOptions: {
+        watch: true
+      }
+    }))
     // .pipe(app.nunjucks.compile())
     .pipe(app.plugins.replace(/@img\//g, 'img/'))
     .pipe(webpHtmlNosvg())

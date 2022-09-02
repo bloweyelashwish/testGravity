@@ -9,11 +9,21 @@
 		slides: [{title: 'Work around you and your team', description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'}, {title: 'Work around you and your team', description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'}]
 	} %}
 
+{% set sliderOptions = {
+	infinite: true,
+	dots: true,
+	arrows: false,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	autoplay: true,
+	autoplaySpeed: 5000
+} %}
+
 <section class="hero" id="home">
 	<div class="hero__container grid">
 		<article class="hero__main-content content-hero">
 
-			<div class="content-hero__slider slider-hero slider-hero-js">
+			<div class="content-hero__slider slider-hero js-slider" data-options="{{ sliderOptions | dump }}">
 
 				{% for slide in hero.slides %}
 					<div class="slider-hero__slide slide-hero">
