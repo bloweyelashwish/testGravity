@@ -9,14 +9,12 @@
 <section class="clients">
 	<div class="clients__container container grid">
 		<h2 class="clients__title title">{{ clientsSection.title }}</h2>
-
 		<div class="clients__text-content">
 			<div class="clients__subtitle">
 				<span class="subtitle">{{ clientsSection.name }}</span>
 			</div>
 			<p class="clients__text">{{ clientsSection.text }}</p>
 		</div>
-
 		<div class="clients__companies flex">
 			{% for company in clientsSection.companies %}
 				<div class="clients__company">

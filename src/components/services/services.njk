@@ -29,23 +29,18 @@
 		}]
 	} %}
 
-
-
 {% macro ServicesBlock() %}
 <section class="services" id="services">
 	<div class="services__container grid">
 		<div class="services__subtitle">
 			<span class="subtitle">{{ servicesSection.name }}</span>
 		</div>
-		
 		<h2 class="services__title title">
 			{{ servicesSection.title }}
 		</h2>
-
 		<nav class="services__menu">
 			{{ SectionMenu(servicesSection.menu.links, 'list--grid') }}
 		</nav>
-
 		<div class="services__slider slider-services js-slider" data-options="{{ sliderOptions | dump }}">
 			{% for slide in servicesSection.slides %}
 				<div class="slider-services__slide">
@@ -56,11 +51,9 @@
 				</div>
 			{% endfor %}
 		</div>
-
 		<div class="services__arrows">
 			{{ SliderArrows('js-prev-services', 'js-next-services') }}
 		</div>
-
 	</div>
 </section>
 {% endmacro %}

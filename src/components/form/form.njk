@@ -8,27 +8,22 @@
 					<label class="form__label" for="firstName">first name</label>
 					<input class="form__input" type="text" name="firstName" id="firstName" autocomplete="off" required>
 				</div>
-
 				<div class="form__group">
 					<label class="form__label" for="lastName">last name</label>
 					<input class="form__input" type="text" name="lastName" id="lastName" autocomplete="off" required>
 				</div>
-
 				<div class="form__group">
 					<label class="form__label" for="registration-email">email</label>
 					<input class="form__input" type="email" name="email" id="registration-email" autocomplete="off" required>
 				</div>
-
 				<div class="form__group">
 					<label class="form__label" for="registration-password">enter your password</label>
 					<input class="form__input" type="password" name="password" id="registration-password" autocomplete="off" required>
 				</div>
-
 				<div class="form__group">
 					<label class="form__label" for="registration-password2">confirm your password</label>
 					<input class="form__input" type="password" name="password2" id="registration-password2" autocomplete="off" required>
 				</div>
-
 				<div class="form__button">
 				{{ Btn( 'submit', 'primary', 'Get Started') }}
 				</div>
@@ -37,18 +32,15 @@
 
 		{% call FormContent('js-log-in','is-disabled') %}
 			<div class="form__log-in">
-				<h3 class="form__title">Log In</h3>
-			
+				<h3 class="form__title">Log In</h3>		
 				<div class="form__group">
 					<label class="form__label" for="email">email</label>
 					<input class="form__input" type="email" name="email" id="email" autocomplete="off" required>
 				</div>
-
 				<div class="form__group">
 					<label class="form__label" for="password">enter your password</label>
 					<input class="form__input" type="password" name="password" id="password" autocomplete="off" required>
 				</div>
-
 				<div class="form__button">
 				{{ Btn( 'submit', 'primary', 'Log In') }}
 				</div>

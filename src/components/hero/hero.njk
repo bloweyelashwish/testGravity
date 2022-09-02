@@ -22,9 +22,7 @@
 <section class="hero" id="home">
 	<div class="hero__container grid">
 		<article class="hero__main-content content-hero">
-
 			<div class="content-hero__slider slider-hero js-slider" data-options="{{ sliderOptions | dump }}">
-
 				{% for slide in hero.slides %}
 					<div class="slider-hero__slide slide-hero">
 						<h1 class="slide-hero__title">{{ slide.title }}</h1>
@@ -32,29 +30,24 @@
 					</div>
 				{% endfor %}
 			</div>
-
 			<div class="hero__btn" data-btn-modal-open>
 						{{ Btn('button', 'primary', 'Get Started') }}
 			</div>
-
 			<div class="hero__form" data-form-modal>
 				<div class="hero__tablist flex">
 					<button class="hero__tab tab js-trigger-tab selected" data-trigger="js-sign-up">Sign Up</button>
 					<button class="hero__tab tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
 					<div class="hero__tab tab tab--close js-close-form"></div>
 				</div>
-
 				<div class="hero__form-content">
 					{% call FormModal() %}
 					{% endcall %}
 				</div>
 			</div>
 		</article>
-
 		<div class="hero__video">
 			{{ Video() }}
 		</div>
-
 		<div class="hero__image">
 			<img src="{{ hero.img }}" alt="{{ hero.imgAlt }}" height="840" width="665">
 		</div>
