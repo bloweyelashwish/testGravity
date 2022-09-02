@@ -1,0 +1,115 @@
+@use "../util/" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-weight: 400;
+}
+
+// img
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+// form
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+// screen readers
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+ }
+
+// disabled 
+
+.is-disabled {
+	display: none;
+}
+
+
+// placement classes 
+
+.container {
+	max-width: 69.75rem;
+	margin-inline: auto;
+	padding-inline: 1em;
+}
+
+.flex {
+	display: flex;
+}
+
+.grid {
+	display: grid;
+}
+
+
+// page overlay
+
+.page-overlay {
+	display: none;
+	position: fixed;
+	min-width: 100vw;
+	min-height: 100vh;
+	z-index: 9;
+	background-color: hsl(var(--gray), .7);
+
+	&.is-down {
+		display: block;
+	}
+}
+
+// overflow hidden 
+.overflow-hidden {
+	overflow: hidden;
+}

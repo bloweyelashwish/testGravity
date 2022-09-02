@@ -34,10 +34,10 @@ import { ttfToWoff2, fontsStyle } from './gulp/tasks/fonts.js'
 // }
 
 function watcher() {
-  gulp.watch(`${path.src.templates}/**/*.njk`, templates)
-  gulp.watch(`${path.src.styles}/**/*.scss`, styles)
+  console.log(`${path.src.templates}**/*.njk`)
+  gulp.watch(`${path.src.templates}**/*.njk`, templates)
+  gulp.watch(`${path.src}/**/*.scss`, styles)
   gulp.watch(`${path.src.js}/**/*.js`, js)
-  gulp.watch(`${path.src.templates}/**/*.js`, js)
   gulp.watch(path.watch.images, images)
 }
 const fonts = gulp.series(ttfToWoff2, fontsStyle)

@@ -1,0 +1,112 @@
+.testimonials {
+	padding-block: 0 3rem;
+
+	@include breakpoint(medium) {
+		padding-block: 0 5.5rem;
+	}
+
+	&__container {
+		grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 53rem) minmax(1rem, 1fr);
+		grid-template-areas: 
+		". subtitle . "
+		". slider ."
+		". arrows .";
+
+		position: relative;
+
+		@include breakpoint(large) {
+			grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 68rem) minmax(1rem, 1fr);
+			grid-template-areas: 
+			". slider slider ."
+			". arrows . .";
+		}
+	}
+
+	&__subtitle {
+		grid-area: subtitle;
+		margin-bottom: 1em;
+
+		@include breakpoint(large) {
+			align-self: start;
+		}
+	}
+
+	&__slider {
+		grid-area: slider;
+		width: 100%;
+
+	}
+
+	&__slide {
+		margin-inline: 1rem;
+
+		@include breakpoint(large) {
+			display: grid !important;
+
+			grid-template-areas: 
+			"subtitle image"
+			"quote image"
+			"meta image";
+
+			grid-template-columns: minmax(1rem, 34rem) minmax(1rem, 34rem);
+			grid-template-rows: 1rem auto auto;
+		}
+	}
+
+	&__arrows {
+		grid-area: arrows;
+		justify-self: center;
+
+		@include breakpoint(medium) {
+			justify-self: start;
+		}
+
+		@include breakpoint(large) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			transform: translateY(-70%);
+		}
+	}
+
+	&__quote {
+		margin-bottom: .6em;
+		max-width: 33.75rem;
+
+		 p {
+			font-weight: 600;
+		 }
+
+		 @include breakpoint(large) {
+			grid-area: quote;
+			align-self: center;
+		 }
+	}
+
+	&__author-meta {
+		grid-area: meta;
+		margin-bottom: 1em;
+	}
+
+	&__author-name {
+		font-size: var(--text-md);
+		font-weight: 500;
+	}
+
+	&__author-image {
+		grid-area: image;
+		max-width: 80%;
+		margin-inline: auto;
+		margin-bottom: 2em;
+
+		@include breakpoint(medium) {
+			max-width: 100%;
+			margin-inline: 0;
+		}
+
+		@include breakpoint(large) {
+			justify-self: end;
+		}
+	}
+}

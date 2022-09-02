@@ -15,19 +15,16 @@ export const path = {
   },
   src: {
     js: `${srcFolder}/js`,
-    files: `${srcFolder}/files/**/*.*`,  // Я ХРЕНЬ, МЕНЯ НАДО УДАЛИТЬ!!!
-    templates: `${srcFolder}/templates`,
-    styles: `${srcFolder}/styles`,
+    templates: `${srcFolder}/templates/`,
+    styles: `${srcFolder}/scss/`,
     images: `${srcFolder}/img`,
     svg: `${srcFolder}/img/**/*.svg`,
-    // templates: `${srcFolder}/templates/*.html`,
   },
   watch: {
-    images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,ico,svg}`,
+    images: `${srcFolder}/img/**/*.{ jpg,jpeg,png,gif,webp,ico,svg }`,
   },
   clean: buildFolder,
   buildFolder: buildFolder,
   srcFolder: srcFolder,
-  rootFolder: rootFolder,
-  ftp: ``,
+  rootFolder: rootFolder
 }

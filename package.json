@@ -35,5 +35,10 @@
     "webp-converter": "^2.2.3",
     "webpack": "^5.72.1",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gulp-nunjucks-with-env": "^1.0.2",
+    "jquery": "^3.6.1",
+    "slick-carousel": "^1.8.1"
   }
 }

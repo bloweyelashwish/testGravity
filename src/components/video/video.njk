@@ -1,0 +1,13 @@
+
+{% macro Video()%}
+{% from '../button/button.njk' import Btn %}
+{% set link = 'https://www.youtube.com/embed/XnzxEGLaPxs'%}
+{% set placeholder = '@img/video-placeholder.jpg' %}
+
+<div class="video" data-video data-src="{{ link }}">
+	<img class="video__placeholder" src="{{ placeholder }}" alt="Video placeholder">
+	<div class="video__btn btn--center">
+		{{ Btn('button', 'play') }}
+	</div>
+</div>
+{% endmacro %}

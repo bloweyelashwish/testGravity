@@ -1,0 +1,7 @@
+{% macro SectionMenu(menu, modifier) %}
+	<ul class="list {{ modifier }}">
+		{% for link in menu %}
+			<li class="list__item"><a class="list__link" href="{{ link.href }}">{{ link.name }}</a></li>
+		{% endfor %}
+	</ul>
+{% endmacro %}

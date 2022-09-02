@@ -36,7 +36,7 @@ export const ttfToWoff2 = () => {
 // }
 
 export const fontsStyle = () => {
-  const fontsFile =`${app.path.srcFolder}/styles/fonts.scss`
+  const fontsFile =`${app.path.srcFolder}/scss/fonts.scss`
   fs.readdir(app.path.build.fonts, function(err, fontsFiles) {
     if(fontsFiles) {
       if(!fs.existsSync(fontsFile)) {
