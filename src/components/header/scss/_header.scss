@@ -39,6 +39,12 @@
 		}
 	}
 
+	&__nav-toggle-wrapper {
+		z-index: 15;
+		height: 0.875rem;
+		width: 2.125rem;
+	}
+
 	&__nav-toggle {
 		z-index: 15;
 		display: flex;

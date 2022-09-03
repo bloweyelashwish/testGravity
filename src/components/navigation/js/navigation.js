@@ -8,19 +8,24 @@ const openNavigation = () => {
 	}
 
 	navToggle.addEventListener('click', (e) => {
-		navToggle.classList.toggle('active');
-		navigationDrop();
+		if (navToggle.classList.contains('active')) {
+			closeNavigation();
+		} else {
+			navToggle.classList.add('active');
+			navigationDrop();
+		}
 	})
 }
 
 const navigationDrop = () => {
-	if (navToggle.classList.contains('active')) {
 		navigation.classList.add('dropped');
 		body.classList.add('overflow-hidden');
-	}
-	else {
-		closeNavigation();
-	}
+
+		navigation.addEventListener('click', (e) => {
+			if (!e.target.classList.contains('navigation__item')) {
+				closeNavigation();
+			}
+		})
 }
 
 const closeNavigation = () => {

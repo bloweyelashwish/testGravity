@@ -458,6 +458,12 @@ body {
   background: linear-gradient(0deg, rgba(174, 182, 220, 0.7514356084) 0%, rgb(111, 108, 130) 100%);
 }
 
+.header__nav-toggle-wrapper {
+  z-index: 15;
+  height: 0.875rem;
+  width: 2.125rem;
+}
+
 .header__nav-toggle {
   z-index: 15;
   display: -webkit-box;
@@ -1460,6 +1466,9 @@ body {
 }
 
 .navigation__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2248,9 +2257,9 @@ body {
     -ms-grid-columns: (max-content)[2];
     grid-template-columns: repeat(2, -webkit-max-content);
     grid-template-columns: repeat(2, max-content);
-    -webkit-column-gap: 3.4em;
-       -moz-column-gap: 3.4em;
-            column-gap: 3.4em;
+    -webkit-column-gap: 4.5em;
+       -moz-column-gap: 4.5em;
+            column-gap: 4.5em;
     row-gap: 1.15em;
   }
 
