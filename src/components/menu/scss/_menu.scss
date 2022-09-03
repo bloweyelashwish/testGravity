@@ -6,7 +6,7 @@
 		display: grid;
 		column-gap: 2em;
 		row-gap: .5em;
-		grid-template-columns: repeat(2, max-content);
+		grid-template-columns: repeat(5, max-content);
 
 		@include breakpoint (medium) {
 			grid-template-columns: repeat(4, max-content);

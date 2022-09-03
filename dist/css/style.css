@@ -1516,10 +1516,10 @@ body {
      -moz-column-gap: 2em;
           column-gap: 2em;
   row-gap: 0.5em;
-  -ms-grid-columns: (-webkit-max-content)[2];
-  -ms-grid-columns: (max-content)[2];
-  grid-template-columns: repeat(2, -webkit-max-content);
-  grid-template-columns: repeat(2, max-content);
+  -ms-grid-columns: (-webkit-max-content)[5];
+  -ms-grid-columns: (max-content)[5];
+  grid-template-columns: repeat(5, -webkit-max-content);
+  grid-template-columns: repeat(5, max-content);
 }
 
 .section-menu--flex {
