@@ -16,7 +16,7 @@
 		
 		@include breakpoint (large) {
 			grid-template-columns: repeat(2, max-content);
-			column-gap: 3.4em;
+			column-gap: 4.5em;
 			row-gap: 1.15em;
 		}
 	}
