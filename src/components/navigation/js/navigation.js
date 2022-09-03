@@ -9,26 +9,26 @@ const openNavigation = () => {
 
 	navToggle.addEventListener('click', (e) => {
 		navToggle.classList.toggle('active');
-		menuDrop();
+		navigationDrop();
 	})
 }
 
-const menuDrop = () => {
+const navigationDrop = () => {
 	if (navToggle.classList.contains('active')) {
 		navigation.classList.add('dropped');
 		body.classList.add('overflow-hidden');
 	}
 	else {
-		closeMenu();
+		closeNavigation();
 	}
 }
 
-const closeMenu = () => {
+const closeNavigation = () => {
 	navigation.classList.remove('dropped');
 	body.classList.remove('overflow-hidden');
 	navToggle.classList.remove('active');
 };
 
-export const initMenu = () => {
+export const initNavigation = () => {
 	openNavigation();
 }

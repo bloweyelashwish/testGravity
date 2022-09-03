@@ -1,5 +1,4 @@
 {% from '../button/button.njk' import Btn %}
-
 {% macro FormModal(name) %}
 	{% call FormContent('js-sign-up') %}
 		<div class="form__registration js-sign-up">
@@ -25,7 +24,11 @@
 				<input class="form__input" type="password" name="password2" id="registration-password2" autocomplete="off" required>
 			</div>
 			<div class="form__button">
-			{{ Btn( 'submit', 'primary', 'Get Started') }}
+			{{ Btn({
+					type: 'submit', 
+					class: 'primary', 
+					text: 'Get Started'
+				}) }}
 			</div>
 		</div>
 	{% endcall %}
@@ -41,7 +44,11 @@
 				<input class="form__input" type="password" name="password" id="password" autocomplete="off" required>
 			</div>
 			<div class="form__button">
-			{{ Btn( 'submit', 'primary', 'Log In') }}
+			{{ Btn({
+					type: 'submit', 
+					class: 'primary', 
+					text: 'Log In'
+				}) }}
 			</div>
 		</div>
 	{% endcall %}

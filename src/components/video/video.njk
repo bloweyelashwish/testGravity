@@ -11,7 +11,10 @@
 <div class="video js-video" data-src="{{ settings.source }}">
 	<img class="video__placeholder js-video-placeholder" src="{{settings.placeholder }}" alt="Video placeholder">
 	<div class="video__btn btn btn--center js-video-btn">
-		{{ Btn('button', 'play') }}
+		{{ Btn({
+			type:'button', 
+			class: 'play'
+		}) }}
 	</div>
 </div>
 {% endmacro %}

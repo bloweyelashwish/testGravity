@@ -12,7 +12,6 @@
 		". subtitle . "
 		". slider ."
 		". arrows .";
-
 		position: relative;
 
 		@include breakpoint(large) {
@@ -26,8 +25,6 @@
 	&__subtitle {
 		grid-area: subtitle;
 		margin-bottom: 1em;
-
-		margin-bottom: 2.5rem;
 		--fz: var(--text-sm);
 		opacity: var(--text-opacity);
 		text-transform: uppercase;
@@ -37,6 +34,7 @@
 		color: hsla(0, 0%, 13%, 1);
 		cursor: pointer;
 		transition: all 350ms ease-in-out;
+
 		&::before {
 			--height: calc(var(--fz) / 2);
 			content: '';
@@ -47,6 +45,7 @@
 			margin-bottom: calc(var(--height) / 2);
 			margin-right: .5em;
 		}
+
 		&:hover::before,
 		&:active::before {
 			color: hsla(0, 0%, 56%, 1);
@@ -68,12 +67,10 @@
 
 		@include breakpoint(large) {
 			display: grid !important;
-
 			grid-template-areas: 
 			"subtitle image"
 			"quote image"
 			"meta image";
-
 			grid-template-columns: minmax(1rem, 34rem) minmax(1rem, 34rem);
 			grid-template-rows: 1rem auto auto;
 		}
@@ -91,7 +88,6 @@
 			position: absolute;
 			bottom: 0;
 			left: 0;
-
 			transform: translateY(-70%);
 		}
 	}
@@ -99,7 +95,6 @@
 	&__quote {
 		margin-bottom: .6em;
 		max-width: 33.75rem;
-
 		font-size: var(--text-title-md);
 		font-weight: 600;
 		letter-spacing: -1px;

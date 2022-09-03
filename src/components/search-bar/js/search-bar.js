@@ -1,6 +1,6 @@
+const searchSubmit = document.querySelector('.js-search-bar-submit');
 const searchBar = document.querySelector('.js-search-bar');
 const searchInput = document.querySelector('.js-search-bar-input');
-const searchSubmit = document.querySelector('.js-search-bar-submit');
 const searchElements = [searchBar, searchInput, searchSubmit];
 
 const closeSearchBar = () => {

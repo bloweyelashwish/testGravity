@@ -29,6 +29,7 @@
 		grid-area: subtitle;
 		justify-self: start;
 		max-width: 27rem;
+
 		@include breakpoint(large) {
 			justify-self: end;
 		}
@@ -68,6 +69,7 @@
 		margin-top: 2rem;
 		gap: 4rem;
 		align-items: center;
+		
 		@include breakpoint(large){
 			margin-top: 0;
 			justify-content: space-between;

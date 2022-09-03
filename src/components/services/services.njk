@@ -1,6 +1,6 @@
 {% from '../menu/menu.njk' import SectionMenu %}
 {% from '../button/button.njk' import Btn %}
-{% from '../slider/slider.njk' import SliderArrows %}
+{% from '../slider-arrows/slider-arrows.njk' import SliderArrows %}
 
 {% set DEFAULT_SERVICES_SETTINGS = {
 	title: 'We love work hard and explore new things that’s why we cover lot of things. Check our service list and view details',
@@ -55,7 +55,10 @@
 				<div class="services__slide">
 					<img src="{{ slide.image }}" alt="Alt" width="825" height="500">
 					<div class="services__btn btn btn--center">
-					{{ Btn('button', 'play') }}
+					{{ Btn({
+						type: 'button',
+						class: 'play'
+					}) }}
 					</div>
 				</div>
 			{% endfor %}

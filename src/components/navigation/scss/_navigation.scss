@@ -9,16 +9,19 @@
 		font-size: var(--text-title-md);
 		text-align: center;
 		letter-spacing: 4px;
+		
 		& >*:where(:not(:first-child)) {
 			margin-top: 1.5rem;
 		}
 	}
+
 	&__item {
 		display: inline-block;
 		&:hover {
 			text-decoration: underline;
 		}
 	}
+
 	&__link {
 		color: inherit;
 		text-decoration: none;

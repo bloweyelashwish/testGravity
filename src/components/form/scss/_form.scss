@@ -6,22 +6,26 @@
 	border-radius: 1rem;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
+
 	@include breakpoint(medium) {
 		row-gap: 1em;
 		padding: 2em;
 	}
+	
 	&__title {
 		font-size: var(--text-title-form);
 		text-align: center;
 		text-transform: uppercase;
 		margin-bottom: 1em;
 	}
+
 	&__group {
 		width: 80%;
 		margin-inline: auto;
 		position: relative;
 		margin-bottom: 2em;
 	}
+
 	&__label {
 		position: absolute;
 		left: .5em;
@@ -29,17 +33,20 @@
 		text-transform: lowercase;
 		color: hsla(var(--dark-gray));
 		transition: all 150ms ease-in-out;
-		pointer-events: none; 
+		pointer-events: none;
+
 		&.in-focus {
 			transform: translateY(-100%);
 			color: hsla(var(--darker-blue), 1);
 		}
 	}
+
 	&__input {
 		background-color: inherit;
 		width: 100%;
 		padding: 0.5em;
 	}
+	
 	&__button {
 		display: flex;
 		justify-content: center;

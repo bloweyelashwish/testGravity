@@ -128,25 +128,31 @@
 		border-bottom-right-radius: 0;
 		border-bottom: 1px solid hsla(var(--darker-blue));
 		cursor: pointer;
+
 		&:first-child {
 			border-top-right-radius: 0;
 		}
+
 		&:nth-child(2) {
 			border-top-left-radius: 0;
 		}
+
 		&--selected {
 			background-color: hsla(var(--darker-blue), 1);
 			color: hsl(var(--white));
 			pointer-events: none;
 		}
+
 		&--close {
 			border-bottom: 0;
 			margin-left: auto;
 			padding: .5em 1em;
 		}
+
 		&--close::after {
 			content: '\2715';
 		}
+		
 		&:hover {
 			background-color: hsla(var(--gray-hover), 1);
 		}

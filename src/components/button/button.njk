@@ -1,3 +1,10 @@
-{% macro Btn(type, class, text) %}
-	<button type="{{ type }}" class="btn btn--{{class}}">{{ text }}</button>
+{% set DEFAULT_BUTTON_SETTINGS = {
+	type: 'button',
+	class: '',
+	text: ''
+} %}
+
+{% macro Btn(settings = {}) %}
+{% set settings = merge(DEFAULT_BUTTON_SETTINGS, settings) %}
+	<button type="{{ settings.type }}" class="btn btn--{{ settings.class }}">{{ settings.text }}</button>
 {% endmacro %}

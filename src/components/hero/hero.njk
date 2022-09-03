@@ -44,7 +44,11 @@
 				{% endfor %}
 			</div>
 			<div class="hero__btn js-trigger-form">
-						{{ Btn('button', 'primary', 'Get Started') }}
+				{{ Btn({
+					type: 'submit', 
+					class: 'primary', 
+					text: 'Get Started'
+				}) }}
 			</div>
 			<div class="hero__form js-form-modal">
 				<div class="hero__tablist">

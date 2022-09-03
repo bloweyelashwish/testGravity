@@ -1,0 +1,14 @@
+{% set DEFAULT_SLIDER_ARROWS_SETTINGS = {
+	buttons: {
+		prev: '',
+		next: ''
+	}
+} %}
+
+{% macro SliderArrows(settings = {}) %}
+{% set settings = merge(DEFAULT_SLIDER_ARROWS_SETTINGS, settings) %}
+	<div class="slider-arrows">
+		<div class="slider-arrows__arrow slider-arrows__arrow--prev {{ settings.buttons.prev }}"></div>
+		<div class="slider-arrows__arrow slider-arrows__arrow--next {{ settings.buttons.next }}"></div>
+	</div>
+{% endmacro %}

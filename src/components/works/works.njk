@@ -80,7 +80,10 @@
 						<img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="350" height="450">
 					</div>
 					<div class="works__play-btn">
-						{{ Btn('button', 'play') }}
+						{{ Btn({
+								type:'button', 
+								class: 'play'
+							}) }}
 					</div>
 				</div>
 			{% endfor %}
