@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/fonts.min.css?_v=20220902235638">
-    <link rel="stylesheet" href="css/style.min.css?_v=20220902235638">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?_v=20220902235638" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="./js/app.min.js?_v=20220902235638"></script>
+    <link rel="stylesheet" href="css/fonts.min.css?_v=20220903151639">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220903151639">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?_v=20220903151639" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="./js/app.min.js?_v=20220903151639"></script>
     <title>Gravity</title>
   </head>
   <body>
@@ -81,106 +81,89 @@
     <main>
       
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-
-
 <section class="hero" id="home">
-	<div class="hero__container grid">
-		<article class="hero__main-content content-hero">
-			<div class="content-hero__slider slider-hero js-slider" data-options="{&quot;infinite&quot;:true,&quot;dots&quot;:true,&quot;arrows&quot;:false,&quot;slidesToShow&quot;:1,&quot;slidesToScroll&quot;:1,&quot;autoplay&quot;:true,&quot;autoplaySpeed&quot;:5000}">
+	<div class="hero__container">
+		<article class="hero__main-content">
+			<div class="hero__slider js-slider" data-options="{&quot;infinite&quot;:true,&quot;dots&quot;:true,&quot;arrows&quot;:false,&quot;slidesToShow&quot;:1,&quot;slidesToScroll&quot;:1,&quot;autoplay&quot;:true,&quot;autoplaySpeed&quot;:5000}">
 				
-					<div class="slider-hero__slide slide-hero">
-						<h1 class="slide-hero__title">Work around you and your team</h1>
-						<p class="slide-hero__description text"> From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.</p>
+					<div class="hero__slide">
+						<h1 class="hero__title">Work around you and your team</h1>
+						<p class="hero__description text"> From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.</p>
 					</div>
 				
-					<div class="slider-hero__slide slide-hero">
-						<h1 class="slide-hero__title">Work around you and your team</h1>
-						<p class="slide-hero__description text"> From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.</p>
+					<div class="hero__slide">
+						<h1 class="hero__title">Work around you and your team</h1>
+						<p class="hero__description text"> From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.</p>
 					</div>
 				
 			</div>
-			<div class="hero__btn" data-btn-modal-open>
+			<div class="hero__btn js-trigger-form">
 						
 	<button type="button" class="btn btn--primary">Get Started</button>
 
 			</div>
-			<div class="hero__form" data-form-modal>
-				<div class="hero__tablist flex">
-					<button class="hero__tab tab js-trigger-tab selected" data-trigger="js-sign-up">Sign Up</button>
-					<button class="hero__tab tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
-					<div class="hero__tab tab tab--close js-close-form"></div>
+			<div class="hero__form js-form-modal">
+				<div class="hero__tablist">
+					<button class="hero__tab js-trigger-tab hero__tab--selected" data-trigger="js-sign-up">Sign Up</button>
+					<button class="hero__tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
+					<div class="hero__tab hero__tab--close js-close-form"></div>
 				</div>
 				<div class="hero__form-content">
 					
-
-		
-	<form action="https://httpbin.org/post" class="form js-sign-up " method="POST">
 	
-			<div class="form__registration js-sign-up">
-				<h3 class="form__title">Sign Up</h3>
-				<div class="form__group">
-					<label class="form__label" for="firstName">first name</label>
-					<input class="form__input" type="text" name="firstName" id="firstName" autocomplete="off" required>
-				</div>
-				<div class="form__group">
-					<label class="form__label" for="lastName">last name</label>
-					<input class="form__input" type="text" name="lastName" id="lastName" autocomplete="off" required>
-				</div>
-				<div class="form__group">
-					<label class="form__label" for="registration-email">email</label>
-					<input class="form__input" type="email" name="email" id="registration-email" autocomplete="off" required>
-				</div>
-				<div class="form__group">
-					<label class="form__label" for="registration-password">enter your password</label>
-					<input class="form__input" type="password" name="password" id="registration-password" autocomplete="off" required>
-				</div>
-				<div class="form__group">
-					<label class="form__label" for="registration-password2">confirm your password</label>
-					<input class="form__input" type="password" name="password2" id="registration-password2" autocomplete="off" required>
-				</div>
-				<div class="form__button">
-				
+	<form action="https://httpbin.org/post" class="form js-sign-up  js-form" method="POST">
+	
+		<div class="form__registration js-sign-up">
+			<h3 class="form__title">Sign Up</h3>
+			<div class="form__group">
+				<label class="form__label" for="firstName">first name</label>
+				<input class="form__input" type="text" name="firstName" id="firstName" autocomplete="off" required>
+			</div>
+			<div class="form__group">
+				<label class="form__label" for="lastName">last name</label>
+				<input class="form__input" type="text" name="lastName" id="lastName" autocomplete="off" required>
+			</div>
+			<div class="form__group">
+				<label class="form__label" for="registration-email">email</label>
+				<input class="form__input" type="email" name="email" id="registration-email" autocomplete="off" required>
+			</div>
+			<div class="form__group">
+				<label class="form__label" for="registration-password">enter your password</label>
+				<input class="form__input" type="password" name="password" id="registration-password" autocomplete="off" required>
+			</div>
+			<div class="form__group">
+				<label class="form__label" for="registration-password2">confirm your password</label>
+				<input class="form__input" type="password" name="password2" id="registration-password2" autocomplete="off" required>
+			</div>
+			<div class="form__button">
+			
 	<button type="submit" class="btn btn--primary">Get Started</button>
 
-				</div>
 			</div>
-		
+		</div>
+	
 	</form>
 
-
-		
-	<form action="https://httpbin.org/post" class="form js-log-in is-disabled" method="POST">
 	
-			<div class="form__log-in">
-				<h3 class="form__title">Log In</h3>		
-				<div class="form__group">
-					<label class="form__label" for="email">email</label>
-					<input class="form__input" type="email" name="email" id="email" autocomplete="off" required>
-				</div>
-				<div class="form__group">
-					<label class="form__label" for="password">enter your password</label>
-					<input class="form__input" type="password" name="password" id="password" autocomplete="off" required>
-				</div>
-				<div class="form__button">
-				
+	<form action="https://httpbin.org/post" class="form js-log-in is-disabled js-form" method="POST">
+	
+		<div class="form__log-in">
+			<h3 class="form__title">Log In</h3>		
+			<div class="form__group">
+				<label class="form__label" for="email">email</label>
+				<input class="form__input" type="email" name="email" id="email" autocomplete="off" required>
+			</div>
+			<div class="form__group">
+				<label class="form__label" for="password">enter your password</label>
+				<input class="form__input" type="password" name="password" id="password" autocomplete="off" required>
+			</div>
+			<div class="form__button">
+			
 	<button type="submit" class="btn btn--primary">Log In</button>
 
-				</div>
 			</div>
-		
+		</div>
+	
 	</form>
 
 
@@ -189,13 +172,9 @@
 		</article>
 		<div class="hero__video">
 			
-
-
-
-
 <div class="video" data-video data-src="https://www.youtube.com/embed/XnzxEGLaPxs">
 	<picture><source srcset="img/video-placeholder.webp" type="image/webp"><img class="video__placeholder" src="img/video-placeholder.jpg" alt="Video placeholder"></picture>
-	<div class="video__btn btn--center">
+	<div class="video__btn btn btn--center">
 		
 	<button type="button" class="btn btn--play"></button>
 
@@ -211,16 +190,16 @@
 
 	
 <section class="remark">
-	<div class="remark__container container flex">
+	<div class="remark__container container">
 		<div class="remark__image">
 			<picture><source srcset="img/remarkMainImage.webp" type="image/webp"><img src="img/remarkMainImage.jpg" alt="Image placeholder text" width="444" height="564"></picture>
 		</div>
 		<div class="remark__main-content">
-			<h2 class="remark__title title">We solve digital problems with an outstanding creative flare</h2>
-			<p class="remark__text text">The best time to view the moon, obviously, is at night when there are few clouds and the weather is accommodating for a long and lasting study.</p>
-			<p class="remark__text text">For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.</p>
-			<div class="remark__author-meta flex">
-				<div class="remark__author-image">
+			<h2 class="remark__title">We solve digital problems with an outstanding creative flare</h2>
+			<p class="remark__text">The best time to view the moon, obviously, is at night when there are few clouds and the weather is accommodating for a long and lasting study.</p>
+			<p class="remark__text">For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.</p>
+			<div class="remark__author-meta">
+				<div class="remark__author-image-wrapper">
 					<picture><source srcset="img/authorPhoto.webp" type="image/webp"><img class="remark__author-image" src="img/authorPhoto.jpg" width="65" height="65"></picture>
 				</div>
 				<div class="remark__author-details">
@@ -228,6 +207,36 @@
 					<div class="remark__author-position">Co-Founder &amp; CEO</div>
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+
+	
+<section class="features">
+	<div class="features__container grid">
+		<div class="features__images">
+			<div class="features__image image image--spread">
+				<picture><source srcset="img/imageSpread.webp" type="image/webp"><img src="img/imageSpread.png" alt="Alt" width="570" height="417"></picture>
+			</div>
+			<div class="features__image image image--centered">
+				<picture><source srcset="img/imageCentered.webp" type="image/webp"><img src="img/imageCentered.png" alt="Alt" width="350" height="453"></picture>
+			</div>
+		</div>
+		<div class="features__main-content">
+			<h2 class="features__title title">Well thought with super easy to use</h2>
+			<p class="features__description text">As we approached the palace I could see through the great windows of the first floor the brilliantly illuminated audience chamber of Than Kosis. The immense hall was crowded with nobles and their women.</p>
+		<div class="features__slogans">
+			
+				<div class="features__slogan flex">
+					<img src="img/icons/100icon.svg" alt="Alt">
+					<p>Ultimate Result</p>
+				</div>
+			
+				<div class="features__slogan flex">
+					<img src="img/icons/bagicon.svg" alt="Alt">
+					<p>Minimal Design</p>
+				</div>
+									
 		</div>
 	</div>
 </section>
@@ -251,7 +260,7 @@
 		
 			<li class="list__item"><a class="list__link" href="#">Interactive design</a></li>
 		
-			<li class="list__item"><a class="list__link" href="#">UI/UX </a></li>
+			<li class="list__item"><a class="list__link" href="#">UI/UX</a></li>
 		
 			<li class="list__item"><a class="list__link" href="#">Packaging</a></li>
 		
@@ -265,7 +274,7 @@
 		<div class="services__slider slider-services js-slider" data-options="{&quot;infinite&quot;:false,&quot;arrows&quot;:true,&quot;slidesToShow&quot;:1.3,&quot;slidesToScroll&quot;:1,&quot;prevArrow&quot;:&quot;.js-prev-services&quot;,&quot;nextArrow&quot;:&quot;.js-next-services&quot;,&quot;cssEase&quot;:&quot;ease-out&quot;,&quot;speed&quot;:650,&quot;responsive&quot;:[{&quot;breakpoint&quot;:700,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesToScroll&quot;:1}}]}">
 			
 				<div class="slider-services__slide">
-					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Alt" width="825" height="500"></picture>
 					<div class="slider-services__btn btn btn--center">
 					
 	<button type="button" class="btn btn--play"></button>
@@ -274,7 +283,7 @@
 				</div>
 			
 				<div class="slider-services__slide">
-					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Alt" width="825" height="500"></picture>
 					<div class="slider-services__btn btn btn--center">
 					
 	<button type="button" class="btn btn--play"></button>
@@ -283,25 +292,7 @@
 				</div>
 			
 				<div class="slider-services__slide">
-					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
-					<div class="slider-services__btn btn btn--center">
-					
-	<button type="button" class="btn btn--play"></button>
-
-					</div>
-				</div>
-			
-				<div class="slider-services__slide">
-					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
-					<div class="slider-services__btn btn btn--center">
-					
-	<button type="button" class="btn btn--play"></button>
-
-					</div>
-				</div>
-			
-				<div class="slider-services__slide">
-					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Image Alt" width="825" height="500"></picture>
+					<picture><source srcset="img/slide.webp" type="image/webp"><img src="img/slide.jpg" alt="Alt" width="825" height="500"></picture>
 					<div class="slider-services__btn btn btn--center">
 					
 	<button type="button" class="btn btn--play"></button>
@@ -317,36 +308,6 @@
 		<div class="arrows__arrow arrow arrow--next js-next-services"></div>
 	</div>
 
-		</div>
-	</div>
-</section>
-
-	
-<section class="features">
-	<div class="features__container grid">
-		<div class="features__images">
-			<div class="features__image image image--spread">
-				<picture><source srcset="img/imageSpread.webp" type="image/webp"><img src="img/imageSpread.png" alt="imageAlt" width="570" height="417"></picture>
-			</div>
-			<div class="features__image image image--centered">
-				<picture><source srcset="img/imageCentered.webp" type="image/webp"><img src="img/imageCentered.png" alt="imageAlt" width="350" height="453"></picture>
-			</div>
-		</div>
-		<div class="features__main-content">
-			<h2 class="features__title title">Well thought with super easy to use</h2>
-			<p class="features__description text">As we approached the palace I could see through the great windows of the first floor the brilliantly illuminated audience chamber of Than Kosis. The immense hall was crowded with nobles and their women.</p>
-		<div class="features__slogans">
-			
-				<div class="features__slogan flex">
-					<img src="img/icons/100icon.svg" alt="imageAlt">
-					<p>Ultimate Result</p>
-				</div>
-			
-				<div class="features__slogan flex">
-					<img src="img/icons/bagicon.svg" alt="imageAlt">
-					<p>Minimal Design</p>
-				</div>
-									
 		</div>
 	</div>
 </section>
@@ -452,18 +413,14 @@
 			<p class="works__text text">It picks up the words on the page and displays ads that are similar to those words. Then when someone either performs an action or clicks on your page you will get paid.</p>
 			<a class="works__btn btn btn--primary" href="#" target="_blank">see our works</a>
 		</div>
-
 	</div>
 </section>
 
 	
 <section class="testimonials" id="testimonials">
 	<div class="testimonials__container grid">
-
-
 		<div class="testimonials__slider slider-testimonials js-slider" data-options="{&quot;infinite&quot;:true,&quot;arrows&quot;:true,&quot;slidesToShow&quot;:1,&quot;slidesToScroll&quot;:1,&quot;prevArrow&quot;:&quot;.js-prev-testimonials&quot;,&quot;nextArrow&quot;:&quot;.js-next-testimonials&quot;,&quot;cssEase&quot;:&quot;linear&quot;,&quot;speed&quot;:800,&quot;autoplay&quot;:true,&quot;autoplaySpeed&quot;:3000,&quot;draggable&quot;:false}">
 			
-			
 				<div class="testimonials__slide">
 					<div class="testimonials__subtitle">
 						<span class="subtitle">testimonials</span>
@@ -471,14 +428,13 @@
 					<div class="testimonials__quote title">
 						<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
 					</div>
-
 					<div class="testimonials__author-meta">
 						<p class="testimonials__author-name">Polina Kuzina</p>
 						<p class="testimonials__author-position text">Manager at Craftwork</p>
 					</div>
 
 					<div class="testimonials__author-image">
-						<picture><source srcset="img/Author.webp" type="image/webp"><img src="img/Author.png" alt="The portrait of Polina Kuzina"></picture>
+						<picture><source srcset="img/Author.webp" type="image/webp"><img src="img/Author.png" alt=""></picture>
 					</div>
 				</div>
 			
@@ -489,55 +445,17 @@
 					<div class="testimonials__quote title">
 						<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
 					</div>
-
 					<div class="testimonials__author-meta">
 						<p class="testimonials__author-name">Polina Kuzina</p>
 						<p class="testimonials__author-position text">Manager at Craftwork</p>
 					</div>
 
 					<div class="testimonials__author-image">
-						<picture><source srcset="img/Author.webp" type="image/webp"><img src="img/Author.png" alt="The portrait of Polina Kuzina"></picture>
-					</div>
-				</div>
-			
-				<div class="testimonials__slide">
-					<div class="testimonials__subtitle">
-						<span class="subtitle">testimonials</span>
-					</div>
-					<div class="testimonials__quote title">
-						<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
-					</div>
-
-					<div class="testimonials__author-meta">
-						<p class="testimonials__author-name">Polina Kuzina</p>
-						<p class="testimonials__author-position text">Manager at Craftwork</p>
-					</div>
-
-					<div class="testimonials__author-image">
-						<picture><source srcset="img/Author.webp" type="image/webp"><img src="img/Author.png" alt="The portrait of Polina Kuzina"></picture>
-					</div>
-				</div>
-			
-				<div class="testimonials__slide">
-					<div class="testimonials__subtitle">
-						<span class="subtitle">testimonials</span>
-					</div>
-					<div class="testimonials__quote title">
-						<p>&quot;Professionals in their craft! All products were super great with strong attention to details, and overall vibe&quot;</p>
-					</div>
-
-					<div class="testimonials__author-meta">
-						<p class="testimonials__author-name">Polina Kuzina</p>
-						<p class="testimonials__author-position text">Manager at Craftwork</p>
-					</div>
-
-					<div class="testimonials__author-image">
-						<picture><source srcset="img/Author.webp" type="image/webp"><img src="img/Author.png" alt="The portrait of Polina Kuzina"></picture>
+						<picture><source srcset="img/Author.webp" type="image/webp"><img src="img/Author.png" alt=""></picture>
 					</div>
 				</div>
 			
 		</div>
-
 		<div class="testimonials__arrows">
 			
 	<div class="arrows flex">
@@ -589,7 +507,6 @@
     </main>
     
       
-
 <footer class="footer">
 	<div class="footer__container container grid">
 		<div class="footer__content">

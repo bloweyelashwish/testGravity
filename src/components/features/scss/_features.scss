@@ -1,98 +1,78 @@
 .features {
 	padding-block: 2rem;
-
 	@include breakpoint(medium) {
 		padding-block: 3rem 5rem;
 	}
-
 	@include breakpoint(large) {
 		padding-block: 5.7rem 6.3125rem;
 	}
-
-	.features__container {
+	&__container {
 		grid-template-columns: minmax(.5rem, 1fr) minmax(1rem,53rem) minmax(.5rem, 1fr);
-
-
 		@include breakpoint(large) {
 			grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 36rem) minmax(1rem, 32rem) minmax(1rem, 1fr);
 		}
 	}
-
-	.features__main-content {
+	&__main-content {
 		grid-row: 1 / 2;
 		grid-column: 2 / 3;
-
 		@include breakpoint(large) {
 			grid-column: 3 / 4;
 			margin-left: 4rem;
 		}
 	}
-
-	.features__images {
+	&__images {
 		position: relative;
 		grid-column: 2 / 3;
 		grid-row: 2 / 3;
 		justify-self: center;
-
 		@include breakpoint(large) {
 			grid-row: 1 / 2;
 		}
 	}
-
-	.features__image {
-
+	&__image {
 		&.image--centered {
 			position: absolute;
 			bottom: 0;
 			transform: translate(15%, 20%);
 			filter: drop-shadow(30px 80px 180px rgba(0, 0, 0, 0.25));
 		}
-
 		@include breakpoint(medium) {
 			&.image--centered {
 				transform: translate(15%, 25%);
 			}
 		}
-
 		@include breakpoint(large) {
 			&.image--spread {
 				transform: translateX(-20%);
 			}
-
 			&.image--centered {
 				transform: translate(55%, 20%);
 			}
 		}
 	}
 
-	.features__title {
+	&__title {
 		text-align: center;
 		margin-bottom: 1em;
-
 		@include breakpoint(large) {
 			text-align: left;
 		}
 	}
-
-	.features__description {
+	&__description {
 		margin-bottom: 2em;
 		margin-inline: auto;
-
 		text-align: center;
-
 		@include breakpoint(large) {
 			margin-bottom: 3em;
 			margin-inline: 0;
 			text-align: left;
 		}
 	}
-
-	.features__slogans {
+	&__slogans {
 		display: flex;
 		justify-content: center;
 		column-gap: 1.5em;
 		margin-bottom: 2em;
-
 		@include breakpoint(large) {
 			justify-content: start;
 			flex-direction: column;
@@ -100,11 +80,9 @@
 			margin-bottom: 0;
 		}
 	}
-
-	.features__slogan {
+	&__slogan {
 		align-items: center;
 		column-gap: 1em;
-
 		p {
 			font-size: var(--text-sm);
 			font-weight: 500;

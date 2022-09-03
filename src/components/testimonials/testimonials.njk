@@ -1,80 +1,67 @@
 {% from '../slider/slider.njk' import SliderArrows %}
 
-{% set testimonialsSectionName = 'testimonials' %}
-
-{% set testimonialsSectionSlides = [
-	{
-	text: '"Professionals in their craft! All products were super great with strong attention to details, and overall vibe"',
-	authorName: 'Polina Kuzina',
-	authorPosition: 'Manager at Craftwork',
-	authorImage: '@img/Author.png',
-	imgAlt: 'The portrait of Polina Kuzina'
-	},
-	{
-	text: '"Professionals in their craft! All products were super great with strong attention to details, and overall vibe"',
-	authorName: 'Polina Kuzina',
-	authorPosition: 'Manager at Craftwork',
-	authorImage: '@img/Author.png',
-	imgAlt: 'The portrait of Polina Kuzina'
-	},
-	{
-	text: '"Professionals in their craft! All products were super great with strong attention to details, and overall vibe"',
-	authorName: 'Polina Kuzina',
-	authorPosition: 'Manager at Craftwork',
-	authorImage: '@img/Author.png',
-	imgAlt: 'The portrait of Polina Kuzina'
-	},
-	{
-	text: '"Professionals in their craft! All products were super great with strong attention to details, and overall vibe"',
-	authorName: 'Polina Kuzina',
-	authorPosition: 'Manager at Craftwork',
-	authorImage: '@img/Author.png',
-	imgAlt: 'The portrait of Polina Kuzina'
+{% set DEFAULT_TESTIMONIALS_SETTINGS = {
+	subtitle: 'testimonials',
+	slider: {
+		settings: {
+			infinite: true,
+			arrows: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,		
+			prevArrow: '.js-prev-testimonials',
+			nextArrow: '.js-next-testimonials',
+			cssEase: 'linear',
+			speed: 800,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			draggable: false
+		},
+		slides: [
+			{
+				text: '"Professionals in their craft! All products were super great with strong attention to details, and overall vibe"',
+				author: {
+					name: 'Polina Kuzina',
+					position: 'Manager at Craftwork',
+					image: '@img/Author.png',
+					imageAlt: 'The portrait of Polina Kuzina'
+				}
+			},
+			{
+				text: '"Professionals in their craft! All products were super great with strong attention to details, and overall vibe"',
+				author: {
+					name: 'Polina Kuzina',
+					position: 'Manager at Craftwork',
+					image: '@img/Author.png',
+					imageAlt: 'The portrait of Polina Kuzina'
+				}
+			}
+		]
 	}
-]%}
-
-{% set sliderOptions = {
-	infinite: true,
-	arrows: true,
-	slidesToShow: 1,
-	slidesToScroll: 1,		
-	prevArrow: '.js-prev-testimonials',
-	nextArrow: '.js-next-testimonials',
-	cssEase: 'linear',
-	speed: 800,
-	autoplay: true,
-	autoplaySpeed: 3000,
-	draggable: false
 } %}
 
 {% macro TestimonialsBlock() %}
 <section class="testimonials" id="testimonials">
 	<div class="testimonials__container grid">
-
-
-		<div class="testimonials__slider slider-testimonials js-slider" data-options="{{ sliderOptions | dump }}">
-			
-			{% for slide in testimonialsSectionSlides %}
+		<div class="testimonials__slider slider-testimonials js-slider" data-options="{{ DEFAULT_TESTIMONIALS_SETTINGS.slider.settings | dump }}">
+			{% for slide in DEFAULT_TESTIMONIALS_SETTINGS.slider.slides %}
 				<div class="testimonials__slide">
 					<div class="testimonials__subtitle">
-						<span class="subtitle">{{ testimonialsSectionName }}</span>
+						<span class="subtitle">{{ DEFAULT_TESTIMONIALS_SETTINGS.subtitle }}</span>
 					</div>
 					<div class="testimonials__quote title">
 						<p>{{ slide.text }}</p>
 					</div>
-
 					<div class="testimonials__author-meta">
-						<p class="testimonials__author-name">{{ slide.authorName }}</p>
-						<p class="testimonials__author-position text">{{ slide.authorPosition }}</p>
+						<p class="testimonials__author-name">{{ slide.author.name }}</p>
+						<p class="testimonials__author-position text">{{ slide.author.position }}</p>
 					</div>
 
 					<div class="testimonials__author-image">
-						<img src="{{ slide.authorImage }}" alt="{{ slide.imgAlt }}">
+						<img src="{{ slide.author.image }}" alt="{{ slide.author.imgAlt }}">
 					</div>
 				</div>
 			{% endfor %}
 		</div>
-
 		<div class="testimonials__arrows">
 			{{ SliderArrows('js-prev-testimonials', 'js-next-testimonials') }}
 		</div>

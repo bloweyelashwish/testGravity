@@ -1,34 +1,82 @@
 {% from '../menu/menu.njk' import SectionMenu %}
 {% from '../button/button.njk' import Btn %}
 
-{% set worksSection = {
-	name: 'our works',
+{% set DEFAULT_VIDEO_SETTINGS = {
 	title: 'Discover our Work',
+	subtitle: 'our works',
+	text: 'It picks up the words on the page and displays ads that are similar to those words. Then when someone either performs an action or clicks on your page you will get paid.',
+	link: 'see our works',
 	menu: {
-		links: [{name: 'All', href: '#'}, {name: 'Branding', href: '#'}, {name: 'Web', href: '#'}, {name: 'Development', href: '#'}, {name: 'Films', href: '#'}]
+		links: [
+			{
+				name: 'All',
+				href: '#'
+			},
+			{
+				name: 'Branding',
+				href: '#'
+			},
+			{
+				name: 'Web',
+				href: '#'
+			},
+			{
+				name: 'Development',
+				href: '#'
+			},
+			{
+				name: 'Films',
+				href: '#'
+			}
+		]
 	},
-	workSet: [{imgUrl: '@img/1.png', imgAlt: 'Our work'}, {imgUrl: '@img/2.png', imgAlt: 'Our work'}, {imgUrl: '@img/3.png', imgAlt: 'Our work'}, {imgUrl: '@img/4.png', imgAlt: 'Our work'}, {imgUrl: '@img/5.png', imgAlt: 'Our work'}, {imgUrl: '@img/6.png', imgAlt: 'Our work'}]
-}%}
+	works: [
+		{
+			image: '@img/1.png',
+			imageAlt: 'Our work'
+		},
+		{
+			image: '@img/2.png',
+			imageAlt: 'Our work'
+		},
+		{
+			image: '@img/3.png',
+			imageAlt: 'Our work'
+		},
+		{
+			image: '@img/4.png',
+			imageAlt: 'Our work'
+		},
+		{
+			image: '@img/5.png',
+			imageAlt: 'Our work'
+		},
+		{
+			image: '@img/6.png',
+			imageAlt: 'Our work'
+		}
+	]
+} %}
 
 {% macro WorksBlock() %}
 <section class="works" id="works">
 	<div class="works__container container">
 		<div class="works__subtitle">
-			<span class="subtitle">{{ worksSection.name }}</span>
+			<span class="subtitle">{{ DEFAULT_VIDEO_SETTINGS.subtitle }}</span>
 		</div>
 		<div class="works__main-content flex">
 			<h2 class="works__title title">
-				{{ worksSection.title }}
+				{{ DEFAULT_VIDEO_SETTINGS.title }}
 			</h2>
 			<nav class="works__menu">
-				{{ SectionMenu(worksSection.menu.links, 'list--flex') }}
+				{{ SectionMenu(DEFAULT_VIDEO_SETTINGS.menu.links, 'list--flex') }}
 			</nav>
 		</div>
 		<div class="works__set grid">
-			{% for item in worksSection.workSet %}
+			{% for item in DEFAULT_VIDEO_SETTINGS.works %}
 				<div class="works__item">			
 					<div class="works__image">
-						<img src="{{ item.imgUrl }}" alt="{{ item.imgAlt }}" width="350" height="450">
+						<img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="350" height="450">
 					</div>
 					<div class="works__play-btn">
 						{{ Btn('button', 'play') }}
@@ -37,10 +85,9 @@
 			{% endfor %}
 		</div>
 		<div class="works__hyperlink flex">
-			<p class="works__text text">It picks up the words on the page and displays ads that are similar to those words. Then when someone either performs an action or clicks on your page you will get paid.</p>
-			<a class="works__btn btn btn--primary" href="#" target="_blank">see our works</a>
+			<p class="works__text text">{{ DEFAULT_VIDEO_SETTINGS.text }}</p>
+			<a class="works__btn btn btn--primary" href="#" target="_blank">{{ DEFAULT_VIDEO_SETTINGS.link }}</a>
 		</div>
-
 	</div>
 </section>
 {% endmacro %}

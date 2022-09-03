@@ -1,40 +1,22 @@
-'use strict'
+const formModal = document.querySelector('.js-form-modal');
+const pageOverlay = document.querySelector('.page-overlay');
 
-function form() {
-	document.addEventListener('click', (e) => {
-		if (e.target.closest('[data-btn-modal-open]')) {
-			openForm();
-		};
-	});
-};
-
-function openForm() {
-	const formModal = document.querySelector('[data-form-modal]');
-	const pageOverlay = document.querySelector('.page-overlay');
-	const forms = [...document.querySelectorAll('form')];
-
+const openForm = () => {
 	formModal.classList.add('form-opened');
 	pageOverlay.classList.add('is-down');
+}
 
-	focusOnLabel();
-	selectForm();
-	closeForm(formModal, pageOverlay);
-	submitForm(forms);
-};
-
-
-
-function selectForm() {
+const selectForm = () => {
 	const formTabs = document.querySelectorAll('.js-trigger-tab');
 	
 	formTabs.forEach(tab => {
-
 		tab.addEventListener('click', () => {
+			console.log(tab)
 			const tabParent = tab.parentElement;
 			[...tabParent.children].forEach(t => {
-				t.classList.remove('selected');
+				t.classList.remove('hero__tab--selected');
 			});
-			tab.classList.add('selected');
+			tab.classList.add('hero__tab--selected');
 
 			const { trigger } = tab.dataset;
 			const triggeredForm = document.querySelector(`.${trigger}`);
@@ -47,15 +29,16 @@ function selectForm() {
 			} else {
 				formRegister.classList.remove('is-disabled');
 				formLogin.classList.add('is-disabled');
-			};
-		});
-	});
-};
+			}
+		})
+	})
+}
 
-function focusOnLabel() {
+const focusOnLabel = () => {
 	const formLabels = document.querySelectorAll('.form__label');
 	formLabels.forEach(label => {
 		const labelInput = label.nextElementSibling;
+
 		labelInput.addEventListener('focus', e => {
 				label.classList.add('in-focus');
 		});
@@ -63,21 +46,22 @@ function focusOnLabel() {
 		labelInput.addEventListener('blur', e => {
 			if (label.classList.contains('in-focus') && labelInput.value === "") {
 				label.classList.remove('in-focus');
-			};
-		});
-	});
+			}
+		})
+	})
 }
 
-function closeForm(form, overlay) {
+const closeForm = () => {
 	const closeFormBtn = document.querySelector('.js-close-form');
 
 	closeFormBtn.addEventListener('click', (e) => {
-		form.classList.remove('form-opened');
-		overlay.classList.remove('is-down');
+		formModal.classList.remove('form-opened');
+		pageOverlay.classList.remove('is-down');
 	});
-};
+}
 
-function submitForm(forms) {
+const submitForm = () => {
+	const forms = [...document.querySelectorAll('.js-form')];
 	forms.forEach(form => {
 		form.addEventListener('submit', e => {
 			e.preventDefault();
@@ -91,8 +75,21 @@ function submitForm(forms) {
 			}).then(res => res.json()).then(data => console.log(data));
 
 			form.reset();
-		});
-	});
-};
+		})
+	})
+}
 
-export { form };
+const formHandler = () => {
+	openForm();
+	focusOnLabel();
+	selectForm();
+	submitForm();
+	closeForm();
+}
+
+export const initForm = () => {
+	const triggerButton = document.querySelector('.js-trigger-form');
+	triggerButton.addEventListener('click', () => {
+		formHandler();
+	})
+}

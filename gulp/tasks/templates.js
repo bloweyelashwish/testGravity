@@ -1,6 +1,8 @@
 import webpHtmlNosvg from 'gulp-webp-html-nosvg'
 import versionNumber from 'gulp-version-number'
 import nunjucksRender from 'gulp-nunjucks-render';
+import {njkEnv} from '../config/nunjucks-env.js';
+console.log(njkEnv)
 
 export  const templates = () => {
   return app.gulp.src(`${app.path.src.templates}*.njk`)
@@ -15,7 +17,7 @@ export  const templates = () => {
       envOptions: {
         watch: true
       },
-      manageEnv: mergeObj
+      // manageEnv: njkEnv.globals.merge
     }))
     // .pipe(app.nunjucks.compile())
     .pipe(app.plugins.replace(/@img\//g, 'img/'))

@@ -1,43 +1,55 @@
-{% macro HeroBlock() %}
-	{% from '../form/form.njk' import FormModal %}
-	{% from '../button/button.njk' import Btn %}
-	{% from '../video/video.njk' import Video %}
+{% from '../form/form.njk' import FormModal %}
+{% from '../button/button.njk' import Btn %}
+{% from '../video/video.njk' import Video %}
 
-	{% set hero = {
-		img: '@img/hero-image.jpg',
-		imgAlt: 'Hero image',
-		slides: [{title: 'Work around you and your team', description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'}, {title: 'Work around you and your team', description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'}]
-	} %}
-
-{% set sliderOptions = {
-	infinite: true,
-	dots: true,
-	arrows: false,
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	autoplay: true,
-	autoplaySpeed: 5000
+{% set DEFAULT_HERO_SETTINGS = {
+	media: {
+		image: '@img/hero-image.jpg',
+		imageAlt: 'Hero image'
+	},
+	slider: {
+		settings: {
+			infinite: true,
+			dots: true,
+			arrows: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000
+		},
+		slides: [
+			{
+				title: 'Work around you and your team',
+				description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'
+			},
+			{
+				title: 'Work around you and your team',
+				description: 'From ads that dance or sing to MTV-like commercials, online advertisers are now using a new type of technology “rich media” to attract consumers.'
+			}
+		]
+	}
 } %}
 
+{% macro HeroBlock() %}
 <section class="hero" id="home">
-	<div class="hero__container grid">
-		<article class="hero__main-content content-hero">
-			<div class="content-hero__slider slider-hero js-slider" data-options="{{ sliderOptions | dump }}">
-				{% for slide in hero.slides %}
-					<div class="slider-hero__slide slide-hero">
-						<h1 class="slide-hero__title">{{ slide.title }}</h1>
-						<p class="slide-hero__description text"> {{ slide.description }}</p>
+	<div class="hero__container">
+		<article class="hero__main-content">
+			<div class="hero__slider js-slider" data-options="{{ DEFAULT_HERO_SETTINGS.slider.settings | dump }}">
+				{% for slide in DEFAULT_HERO_SETTINGS.slider.slides %}
+					<div class="hero__slide">
+						<h1 class="hero__title">{{ slide.title }}</h1>
+						<p class="hero__description text"> {{ slide.description }}</p>
 					</div>
 				{% endfor %}
 			</div>
-			<div class="hero__btn" data-btn-modal-open>
+			<div class="hero__btn js-trigger-form">
 						{{ Btn('button', 'primary', 'Get Started') }}
 			</div>
-			<div class="hero__form" data-form-modal>
-				<div class="hero__tablist flex">
-					<button class="hero__tab tab js-trigger-tab selected" data-trigger="js-sign-up">Sign Up</button>
-					<button class="hero__tab tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
-					<div class="hero__tab tab tab--close js-close-form"></div>
+			<div class="hero__form js-form-modal">
+				<div class="hero__tablist">
+					<button class="hero__tab js-trigger-tab hero__tab--selected" data-trigger="js-sign-up">Sign Up</button>
+					<button class="hero__tab js-trigger-tab" data-trigger="js-log-in">Log In</button>
+					<div class="hero__tab hero__tab--close js-close-form"></div>
 				</div>
 				<div class="hero__form-content">
 					{% call FormModal() %}
@@ -49,7 +61,7 @@
 			{{ Video() }}
 		</div>
 		<div class="hero__image">
-			<img src="{{ hero.img }}" alt="{{ hero.imgAlt }}" height="840" width="665">
+			<img src="{{ DEFAULT_HERO_SETTINGS.media.image }}" alt="{{ DEFAULT_HERO_SETTINGS.media.imageAlt }}" height="840" width="665">
 		</div>
 	</div>
 </section>

@@ -4,7 +4,6 @@
 $font: "FiraSans", sans-serif;
 
 // font-sizes
-
 :root {
   --text-title: clamp(2rem, 5vw + .5rem, 3.75rem);
   --text-title-md: 1.5rem;
@@ -45,17 +44,14 @@ body {
 .subtitle {
   margin-bottom: 2.5rem;
   --fz: var(--text-sm);
-
   opacity: var(--text-opacity);
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: var(--fz);
   font-weight: 500;
-
   color: hsla(0, 0%, 13%, 1);
   cursor: pointer;
   transition: all 350ms ease-in-out;
-
   &::before {
     --height: calc(var(--fz) / 2);
     content: '';
@@ -65,14 +61,10 @@ body {
     border-bottom: 2px solid hsl(var(--black));
     margin-bottom: calc(var(--height) / 2);
     margin-right: .5em;
-
   }
 
-  &:hover, &:active {
-
-    &::before {
-      color: hsla(0, 0%, 56%, 1);
-    }
+  &:hover::before,
+  &:active::before {
     color: hsla(0, 0%, 56%, 1);
   }
 }
