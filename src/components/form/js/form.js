@@ -7,21 +7,21 @@ const openForm = () => {
 }
 
 const selectForm = () => {
-	const formTabs = document.querySelectorAll('.js-trigger-tab');
+	const formTabs = [...document.querySelectorAll('.js-trigger-tab')];
+	const formRegister = document.querySelector('.js-sign-up');
+	const formLogin = document.querySelector('.js-log-in');
 	
 	formTabs.forEach(tab => {
 		tab.addEventListener('click', () => {
-			console.log(tab)
-			const tabParent = tab.parentElement;
-			[...tabParent.children].forEach(t => {
-				t.classList.remove('hero__tab--selected');
-			});
-			tab.classList.add('hero__tab--selected');
-
+			const { children } = tab.parentElement;
 			const { trigger } = tab.dataset;
 			const triggeredForm = document.querySelector(`.${trigger}`);
-			const formRegister = document.querySelector('.js-sign-up');
-			const formLogin = document.querySelector('.js-log-in');
+
+			children.forEach((child) => {
+				child.classList.remove('hero__tab--selected');
+			});
+
+			tab.classList.add('hero__tab--selected');
 
 			if (triggeredForm.classList.contains('js-log-in')) {
 				formLogin.classList.remove('is-disabled');
@@ -35,15 +35,16 @@ const selectForm = () => {
 }
 
 const focusOnLabel = () => {
-	const formLabels = document.querySelectorAll('.form__label');
+	const formLabels = [...document.querySelectorAll('.js-form-label')];
+
 	formLabels.forEach(label => {
 		const labelInput = label.nextElementSibling;
 
-		labelInput.addEventListener('focus', e => {
+		labelInput.addEventListener('focus', () => {
 				label.classList.add('in-focus');
 		});
 
-		labelInput.addEventListener('blur', e => {
+		labelInput.addEventListener('blur', () => {
 			if (label.classList.contains('in-focus') && labelInput.value === "") {
 				label.classList.remove('in-focus');
 			}
@@ -54,7 +55,7 @@ const focusOnLabel = () => {
 const closeForm = () => {
 	const closeFormBtn = document.querySelector('.js-close-form');
 
-	closeFormBtn.addEventListener('click', (e) => {
+	closeFormBtn.addEventListener('click', () => {
 		formModal.classList.remove('form-opened');
 		pageOverlay.classList.remove('is-down');
 	});
@@ -62,8 +63,9 @@ const closeForm = () => {
 
 const submitForm = () => {
 	const forms = [...document.querySelectorAll('.js-form')];
-	forms.forEach(form => {
-		form.addEventListener('submit', e => {
+
+	forms.forEach((form) => {
+		form.addEventListener('submit', (e) => {
 			e.preventDefault();
 			
 			const { action, method } = form;
@@ -72,7 +74,9 @@ const submitForm = () => {
 			fetch(action, {
 				method: method,
 				body: formData,
-			}).then(res => res.json()).then(data => console.log(data));
+			})
+			.then(res => res.json())
+			.then(data => console.log(data));
 
 			form.reset();
 		})
