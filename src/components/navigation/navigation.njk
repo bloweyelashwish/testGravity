@@ -24,7 +24,7 @@
 {% macro Navigation(settings = {}) %}
 {% set settings = merge(DEFAULT_NAVIGATION_SETTINGS, settings) %}
 	<nav class="navigation">
-		<ul class="navigation__list flex">
+		<ul class="navigation__list">
 			{% for item in settings.menuItems %}
 				<li class="navigation__item">
 					<a href="{{ item.link }}" class="navigation__link">{{ item.title }}</a>
