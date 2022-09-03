@@ -22,7 +22,8 @@ const navigationDrop = () => {
 		body.classList.add('overflow-hidden');
 
 		navigation.addEventListener('click', (e) => {
-			if (!e.target.classList.contains('navigation__item')) {
+			const { classList } = e.target;
+			if (!classList.contains('navigation') && !classList.contains('js-search-bar-input')) {
 				closeNavigation();
 			}
 		})
