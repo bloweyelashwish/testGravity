@@ -1,5 +1,5 @@
 export const initVideoPlayer = () => {
-	const video = document.querySelector('js-video');
+	const video = document.querySelector('.js-video');
 	const { src } = video.dataset;
 	const videoPlaceholder = document.querySelector('.js-video-placeholder');
 	const videoButton = document.querySelector('.js-video-btn');

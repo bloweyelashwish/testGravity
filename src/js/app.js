@@ -7,7 +7,7 @@ import { initSliders } from '../components/slider/js/slider.js';
 document.addEventListener('DOMContentLoaded', () => {
 	initSearchBar();
 	initMenu();
-	// player();
+	initVideoPlayer();
 	initForm();
 	initSliders();
 });
