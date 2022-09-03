@@ -10,12 +10,6 @@
 		flex-direction: column-reverse;
 		align-items: center;
 
-		// @include breakpoint(medium) {
-		// 	flex-direction: row;
-		// 	column-gap: 5rem;
-		// 	align-items: center;
-		// }
-
 		@include breakpoint(large) {
 			flex-direction: row;
 			column-gap: 7rem;
