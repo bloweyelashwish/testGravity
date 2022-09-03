@@ -3,7 +3,7 @@
 	background-color: hsl(var(--dark-gray));
 
 	@include breakpoint(medium) {
-		padding-block: 6.8125rem;
+		padding-block: 6.8rem;
 	}
 
 	&__container {

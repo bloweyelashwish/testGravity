@@ -17,7 +17,7 @@ const selectForm = () => {
 			const { trigger } = tab.dataset;
 			const triggeredForm = document.querySelector(`.${trigger}`);
 
-			children.forEach((child) => {
+			[...children].forEach((child) => {
 				child.classList.remove('hero__tab--selected');
 			});
 

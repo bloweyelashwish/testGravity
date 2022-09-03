@@ -1,6 +1,15 @@
 {% from '../button/button.njk' import Btn %}
-{% macro FormModal(name) %}
-	{% call FormContent('js-sign-up') %}
+
+{% set DEFAULT_FORM_SETTINGS = {
+	jsClass: '',
+	styleClass: ''
+} %}
+
+
+{% macro FormModal() %}
+	{% call FormContent({
+		jsClass: 'js-sign-up'
+	}) %}
 		<div class="form__registration js-sign-up">
 			<h3 class="form__title">Sign Up</h3>
 			<div class="form__group">
@@ -26,13 +35,16 @@
 			<div class="form__button">
 			{{ Btn({
 					type: 'submit', 
-					class: 'primary', 
+					className: 'btn--primary', 
 					text: 'Get Started'
 				}) }}
 			</div>
 		</div>
 	{% endcall %}
-	{% call FormContent('js-log-in','is-disabled') %}
+	{% call FormContent({ 
+			jsClass: 'js-log-in',
+	 		styleClass: 'is-disabled' 
+		}) %}
 		<div class="form__log-in">
 			<h3 class="form__title">Log In</h3>		
 			<div class="form__group">
@@ -46,7 +58,7 @@
 			<div class="form__button">
 			{{ Btn({
 					type: 'submit', 
-					class: 'primary', 
+					className: 'btn--primary', 
 					text: 'Log In'
 				}) }}
 			</div>
@@ -54,8 +66,9 @@
 	{% endcall %}
 {% endmacro %} 
 
-{% macro FormContent(scriptClass, displayClass) %}
-	<form action="https://httpbin.org/post" class="form {{ scriptClass }} {{ displayClass }} js-form" method="POST">
+{% macro FormContent(settings = {}) %}
+	{% set settings = merge(DEFAULT_FORM_SETTINGS, settings) %}
+	<form action="https://httpbin.org/post" class="form {{ settings.jsClass }} {{ settings.styleClass }} js-form" method="POST">
 	{{ caller() }}
 	</form>
 {% endmacro %}

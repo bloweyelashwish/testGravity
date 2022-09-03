@@ -1,7 +1,6 @@
-.list {
+.section-menu {
 	list-style: none;
 	padding: 0;
-	
 	&--grid {
 		margin-top: .5rem;
 		display: grid;
@@ -14,7 +13,7 @@
 			column-gap: 2em;
 			row-gap: 1em;
 		}
-
+		
 		@include breakpoint (large) {
 			grid-template-columns: repeat(2, max-content);
 			column-gap: 3.4em;

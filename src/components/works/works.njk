@@ -1,7 +1,7 @@
 {% from '../menu/menu.njk' import SectionMenu %}
 {% from '../button/button.njk' import Btn %}
 
-{% set DEFAULT_VIDEO_SETTINGS = {
+{% set DEFAULT_WORKS_SETTINGS = {
 	title: 'Discover our Work',
 	subtitle: 'our works',
 	text: 'It picks up the words on the page and displays ads that are similar to those words. Then when someone either performs an action or clicks on your page you will get paid.',
@@ -59,7 +59,7 @@
 } %}
 
 {% macro WorksBlock(settings = {}) %}
-{% set settings = merge(DEFAULT_VIDEO_SETTINGS, settings) %}
+{% set settings = merge(DEFAULT_WORKS_SETTINGS, settings) %}
 <section class="works" id="works">
 	<div class="works__container container">
 		<div class="works__subtitle">
@@ -70,7 +70,7 @@
 				{{ settings.title }}
 			</h2>
 			<nav class="works__menu">
-				{{ SectionMenu(settings.menu.links, 'list--flex') }}
+				{{ SectionMenu({ menuItems: settings.menu.links, className: 'section-menu--flex'}) }}
 			</nav>
 		</div>
 		<div class="works__set">
@@ -82,7 +82,7 @@
 					<div class="works__play-btn">
 						{{ Btn({
 								type:'button', 
-								class: 'play'
+								className: 'btn--play'
 							}) }}
 					</div>
 				</div>

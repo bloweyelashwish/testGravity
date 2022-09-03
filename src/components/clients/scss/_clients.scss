@@ -7,12 +7,12 @@
 			"title ."
 			"subtitle ."
 			"companies companies";
-			row-gap: 2rem;
+		row-gap: 2rem;
 
 		@include breakpoint(large) {
 			grid-template-areas: 
-			"title subtitle"
-			"companies companies";	
+				"title subtitle"
+				"companies companies";	
 			row-gap: 5rem;
 		}
 	}

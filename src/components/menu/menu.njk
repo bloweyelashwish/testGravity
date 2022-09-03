@@ -29,14 +29,14 @@
 			href: '#'
 		}
 	],
-	modifier: 'list--grid'
+	className: 'section-menu--grid'
 } %}
 
 {% macro SectionMenu(settings = {}) %}
 {% set settings = merge(DEFAULT_MENU_SETTINGS, settings) %}
-	<ul class="list {{ settings.modifier }}">
+	<ul class="section-menu {{ settings.className }}">
 		{% for link in settings.menuItems %}
-			<li class="list__item"><a class="list__link" href="{{ link.href }}">{{ link.name }}</a></li>
+			<li class="section-menu__item"><a class="section-menu__link" href="{{ link.href }}">{{ link.name }}</a></li>
 		{% endfor %}
 	</ul>
 {% endmacro %}

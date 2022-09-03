@@ -59,7 +59,7 @@
 			margin-bottom: calc(var(--height) / 2);
 			margin-right: .5em;
 		}
-		
+
 		&:hover,
 		&:active,
 		&:hover::before,
@@ -84,7 +84,7 @@
 	&__slider {
 		grid-area: slider;
 		margin-bottom: 1.5rem;
-		
+
 		@include breakpoint(medium) {
 			margin-bottom: 2rem;
 		}
@@ -96,7 +96,7 @@
 
 	&__arrows {
 		grid-area: arrows;
-
+		
 		@include breakpoint(large) {
 		}
 	}
@@ -117,7 +117,6 @@
 		max-width: 52rem;
 		width: 100%;
 		opacity: 1;
-
 		img {
 			object-fit: cover;
 		}

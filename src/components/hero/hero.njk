@@ -39,14 +39,13 @@
 				{% for slide in settings.slider.slides %}
 					<div class="hero__slide">
 						<h1 class="hero__title">{{ slide.title }}</h1>
-						<p class="hero__description text"> {{ slide.description }}</p>
+						<p class="hero__description"> {{ slide.description }}</p>
 					</div>
 				{% endfor %}
 			</div>
 			<div class="hero__btn js-trigger-form">
 				{{ Btn({
-					type: 'submit', 
-					class: 'primary', 
+					className: 'btn--primary', 
 					text: 'Get Started'
 				}) }}
 			</div>
