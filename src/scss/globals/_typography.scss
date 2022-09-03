@@ -62,7 +62,6 @@ body {
     margin-bottom: calc(var(--height) / 2);
     margin-right: .5em;
   }
-
   &:hover::before,
   &:active::before {
     color: hsla(0, 0%, 56%, 1);

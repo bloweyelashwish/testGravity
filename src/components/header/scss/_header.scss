@@ -1,21 +1,25 @@
 .header {
 	padding-block: 1em;
+
 	&__container {
+		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 	@include breakpoint(medium) {
-			justify-content: space-between;
-			align-items: end;
 			padding-block: 2rem;
 		}
 	}
+
 	&__logo {
 		align-self: center;
 	}
+
 	&__search-bar {
 		margin-left: -3rem;
 		z-index: 6;
 	}
+
 	&__navigation {
 		position: fixed;
 		z-index: 6;
@@ -27,15 +31,18 @@
 		padding-block: 20vh;
 		overflow-y: auto;
 		transition: top 350ms ease-in-out, opacity 250ms ease, background 350ms ease-in-out;
+
 		&.dropped {
 			top: 0;
 			opacity: 1;
 			background: linear-gradient(0deg, rgba(174,182,220,0.7514356084230567) 0%, rgba(111,108,130,1) 100%);
 		}
 	}
-	&__nav-toggle-wrapper {
-		justify-self: center;
-	}
+
+	// &__nav-toggle-wrapper {
+	// 	justify-self: center;
+	// }
+
 	&__nav-toggle {
 		z-index: 15;
 		display: flex;
@@ -47,15 +54,18 @@
 		border: 0;
 		background-color: transparent;
 		cursor: pointer;
+
 		&.active {
 			.header__nav-toggle-line {
 				transition: transform 250ms ease;
 				top: 50%;
 				width: 75%;	
+
 				&:first-of-type {
 					left: 15%;
 					transform: rotate(45deg);
 				}
+
 				&:last-of-type {
 				right: 10%;
 				transform: rotate(-45deg);
@@ -63,6 +73,7 @@
 			}
 		}
 	}
+
 	&__nav-toggle-line {
 		position: absolute;
 		display: block;
@@ -70,12 +81,14 @@
 		height: 0.1875rem;
 		background-color: hsl(var(--black));
 		transition: width 150ms ease-in-out;
+
 		&:first-of-type {
 			top: 0;
 			width: 100%;
 		}
+
 		&:last-of-type {
-		bottom: 0;
+			bottom: 0;
 			right: 0;
 			width: 50%;
 		}

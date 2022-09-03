@@ -10,11 +10,11 @@
 		flex-direction: column-reverse;
 		align-items: center;
 
-		@include breakpoint(medium) {
-			flex-direction: row;
-			column-gap: 5rem;
-			align-items: center;
-		}
+		// @include breakpoint(medium) {
+		// 	flex-direction: row;
+		// 	column-gap: 5rem;
+		// 	align-items: center;
+		// }
 
 		@include breakpoint(large) {
 			flex-direction: row;
@@ -43,7 +43,7 @@
 	&__main-content {
 		text-align: center;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			text-align: left;
 			margin-top: 2rem;
 			flex: 0 1 55%;
@@ -55,7 +55,7 @@
 		opacity: var(--text-opacity);
 		max-width: 45ch;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			margin-inline: 0;
 		}
 
@@ -83,7 +83,7 @@
 		column-gap: 1rem;
 		margin-bottom: 2rem;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			justify-content: start;
 			column-gap: 2rem;
 		}

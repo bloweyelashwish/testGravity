@@ -71,21 +71,21 @@
 
 {% macro ServicesBlock() %}
 <section class="services" id="services">
-	<div class="services__container grid">
+	<div class="services__container">
 		<div class="services__subtitle">
-			<span class="subtitle">{{ DEFAULT_SERVICES_SETTINGS.subtitle }}</span>
+			{{ DEFAULT_SERVICES_SETTINGS.subtitle }}
 		</div>
-		<h2 class="services__title title">
+		<h2 class="services__title">
 			{{ DEFAULT_SERVICES_SETTINGS.title }}
 		</h2>
 		<nav class="services__menu">
 			{{ SectionMenu(DEFAULT_SERVICES_SETTINGS.menu.links, 'list--grid') }}
 		</nav>
-		<div class="services__slider slider-services js-slider" data-options="{{ DEFAULT_SERVICES_SETTINGS.slider.settings | dump }}">
+		<div class="services__slider js-slider" data-options="{{ DEFAULT_SERVICES_SETTINGS.slider.settings | dump }}">
 			{% for slide in DEFAULT_SERVICES_SETTINGS.slider.slides %}
-				<div class="slider-services__slide">
+				<div class="services__slide">
 					<img src="{{ slide.image }}" alt="Alt" width="825" height="500">
-					<div class="slider-services__btn btn btn--center">
+					<div class="services__btn btn btn--center">
 					{{ Btn('button', 'play') }}
 					</div>
 				</div>

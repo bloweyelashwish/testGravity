@@ -7,9 +7,9 @@
 } %}
 
 {% macro Video()%}
-<div class="video" data-video data-src="{{ DEFAULT_VIDEO_SETTINGS.source }}">
-	<img class="video__placeholder" src="{{ DEFAULT_VIDEO_SETTINGS.placeholder }}" alt="Video placeholder">
-	<div class="video__btn btn btn--center">
+<div class="video js-video" data-src="{{ DEFAULT_VIDEO_SETTINGS.source }}">
+	<img class="video__placeholder js-video-placeholder" src="{{ DEFAULT_VIDEO_SETTINGS.placeholder }}" alt="Video placeholder">
+	<div class="video__btn btn btn--center js-video-btn">
 		{{ Btn('button', 'play') }}
 	</div>
 </div>

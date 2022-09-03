@@ -1,21 +1,21 @@
 {% set DEFAULT_CLIENTS_SETTINGS = {
 	title: 'Our Clients',
-	subtitle: 'worked with',
+	subtitle: 'we worked with',
 	text: 'Our favorite brands are our friends! We help them to achieve their goals, they help us to stay sharp.',
 	clients: ['@img/icons/xiaomi.svg', '@img/icons/tinder.svg', '@img/icons/apple.svg', '@img/icons/nike.svg', '@img/icons/amd.svg']
 } %}
 
 {% macro ClientsBlock() %}
 <section class="clients">
-	<div class="clients__container container grid">
-		<h2 class="clients__title title">{{ DEFAULT_CLIENTS_SETTINGS.title }}</h2>
+	<div class="clients__container container">
+		<h2 class="clients__title">{{ DEFAULT_CLIENTS_SETTINGS.title }}</h2>
 		<div class="clients__text-content">
 			<div class="clients__subtitle">
-				<span class="subtitle">{{ DEFAULT_CLIENTS_SETTINGS.subtitle }}</span>
+				{{ DEFAULT_CLIENTS_SETTINGS.subtitle }}
 			</div>
 			<p class="clients__text">{{ DEFAULT_CLIENTS_SETTINGS.text }}</p>
 		</div>
-		<div class="clients__companies flex">
+		<div class="clients__companies">
 			{% for company in DEFAULT_CLIENTS_SETTINGS.clients %}
 				<div class="clients__company">
 					<img src="{{ company }}" alt="Client's icon">

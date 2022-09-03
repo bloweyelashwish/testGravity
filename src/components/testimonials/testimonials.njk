@@ -41,19 +41,19 @@
 
 {% macro TestimonialsBlock() %}
 <section class="testimonials" id="testimonials">
-	<div class="testimonials__container grid">
-		<div class="testimonials__slider slider-testimonials js-slider" data-options="{{ DEFAULT_TESTIMONIALS_SETTINGS.slider.settings | dump }}">
+	<div class="testimonials__container">
+		<div class="testimonials__slider js-slider" data-options="{{ DEFAULT_TESTIMONIALS_SETTINGS.slider.settings | dump }}">
 			{% for slide in DEFAULT_TESTIMONIALS_SETTINGS.slider.slides %}
 				<div class="testimonials__slide">
 					<div class="testimonials__subtitle">
-						<span class="subtitle">{{ DEFAULT_TESTIMONIALS_SETTINGS.subtitle }}</span>
+						{{ DEFAULT_TESTIMONIALS_SETTINGS.subtitle }}
 					</div>
-					<div class="testimonials__quote title">
+					<div class="testimonials__quote">
 						<p>{{ slide.text }}</p>
 					</div>
 					<div class="testimonials__author-meta">
 						<p class="testimonials__author-name">{{ slide.author.name }}</p>
-						<p class="testimonials__author-position text">{{ slide.author.position }}</p>
+						<p class="testimonials__author-position">{{ slide.author.position }}</p>
 					</div>
 
 					<div class="testimonials__author-image">

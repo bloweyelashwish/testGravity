@@ -1,10 +1,13 @@
 .footer {
 	padding-block: 4rem;
 	background-color: hsl(var(--dark-gray));
+
 	@include breakpoint(medium) {
 		padding-block: 6.8125rem;
 	}
+
 	&__container {
+		display: grid;
 		place-items: center center;
 	}
 }
