@@ -2,32 +2,15 @@
 {% from '../navigation/navigation.njk' import Navigation %}
 
 {% set DEFAULT_HEADER_SETTINGS = {
-	logo: '@img/icons/logo.svg',
-	menu: [
-		{ 
-			title: 'home', 
-			link: '#home' 
-		}, 
-		{ 
-			title: 'services', 
-			link: '#services' 
-		}, 
-		{ 
-			title: 'works', 
-			link: '#works' 
-		},
-		{ 
-			title: 'testimonials', 
-			link: '#testimonials' 
-		}
-	]
+	logo: '@img/icons/logo.svg'
 } %}
 
-{% macro HeaderBlock() %}
+{% macro HeaderBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_HEADER_SETTINGS, settings) %}
 	<header class="header">
 		<div class="header__container container">
 			<a class="header__logo">
-				<img src="{{ DEFAULT_HEADER_SETTINGS.logo }}" alt="logo">
+				<img src="{{ settings.logo }}" alt="logo">
 			</a>
 			<div class="header__search-bar">
 				{{ SearchBar({ className: 'search-bar--desktop' }) }}
@@ -40,7 +23,7 @@
 				</button>
 			</div>
 			<div class="header__navigation js-navigation" aria-hidden="true">
-				{{ Navigation(DEFAULT_HEADER_SETTINGS.menu) }}
+				{{ Navigation() }}
 			</div>
 		</div>
 	</header>

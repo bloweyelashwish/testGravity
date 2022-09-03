@@ -1,10 +1,9 @@
 import webpHtmlNosvg from 'gulp-webp-html-nosvg'
 import versionNumber from 'gulp-version-number'
 import nunjucksRender from 'gulp-nunjucks-render';
-import {njkEnv} from '../config/nunjucks-env.js';
-console.log(njkEnv)
+import { manageEnvironment } from '../config/nunjucks-env.js'
 
-export  const templates = () => {
+export const templates = () => {
   return app.gulp.src(`${app.path.src.templates}*.njk`)
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
@@ -17,7 +16,7 @@ export  const templates = () => {
       envOptions: {
         watch: true
       },
-      // manageEnv: njkEnv.globals.merge
+      manageEnv: manageEnvironment
     }))
     // .pipe(app.nunjucks.compile())
     .pipe(app.plugins.replace(/@img\//g, 'img/'))

@@ -39,14 +39,15 @@
 	}
 } %}
 
-{% macro TestimonialsBlock() %}
+{% macro TestimonialsBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_TESTIMONIALS_SETTINGS, settings) %}
 <section class="testimonials" id="testimonials">
 	<div class="testimonials__container">
-		<div class="testimonials__slider js-slider" data-options="{{ DEFAULT_TESTIMONIALS_SETTINGS.slider.settings | dump }}">
-			{% for slide in DEFAULT_TESTIMONIALS_SETTINGS.slider.slides %}
+		<div class="testimonials__slider js-slider" data-options="{{ settings.slider.settings | dump }}">
+			{% for slide in settings.slider.slides %}
 				<div class="testimonials__slide">
 					<div class="testimonials__subtitle">
-						{{ DEFAULT_TESTIMONIALS_SETTINGS.subtitle }}
+						{{ settings.subtitle }}
 					</div>
 					<div class="testimonials__quote">
 						<p>{{ slide.text }}</p>
@@ -63,7 +64,12 @@
 			{% endfor %}
 		</div>
 		<div class="testimonials__arrows">
-			{{ SliderArrows('js-prev-testimonials', 'js-next-testimonials') }}
+			{{ SliderArrows({
+				buttons: { 
+					prev: 'js-prev-testimonials', 
+					next: 'js-next-testimonials'
+				} 
+			}) }}
 		</div>
 	</div>
 </section>

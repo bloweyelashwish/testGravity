@@ -17,22 +17,23 @@
 	]
 }	%}
 
-{% macro FeaturesBlock() %}
+{% macro FeaturesBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_FEATURES_SETTINGS, settings) %}
 <section class="features">
 	<div class="features__container">
 		<div class="features__images">
 			<div class="features__image features__image--spread">
-				<img src="{{ DEFAULT_FEATURES_SETTINGS.media.imageSpread }}" alt="Alt" width="570" height="417">
+				<img src="{{ settings.media.imageSpread }}" alt="Alt" width="570" height="417">
 			</div>
 			<div class="features__image features__image--centered">
-				<img src="{{ DEFAULT_FEATURES_SETTINGS.media.imageCentered }}" alt="Alt" width="350" height="453">
+				<img src="{{ settings.media.imageCentered }}" alt="Alt" width="350" height="453">
 			</div>
 		</div>
 		<div class="features__main-content">
-			<h2 class="features__title">{{ DEFAULT_FEATURES_SETTINGS.title }}</h2>
-			<p class="features__description">{{ DEFAULT_FEATURES_SETTINGS.description }}</p>
+			<h2 class="features__title">{{ settings.title }}</h2>
+			<p class="features__description">{{ settings.description }}</p>
 		<div class="features__slogans">
-			{% for feature in DEFAULT_FEATURES_SETTINGS.features %}
+			{% for feature in settings.features %}
 				<div class="features__slogan">
 					<img src="{{ feature.icon }}" alt="Alt">
 					<p>{{ feature.text }}</p>

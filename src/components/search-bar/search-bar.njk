@@ -1,4 +1,9 @@
-{% macro SearchBar(settings) %}
+{% set DEFAULT_SEARCH_BAR_SETTINGS = {
+	className: ''
+} %}
+
+{% macro SearchBar(settings = {}) %}
+{% set settings = merge(DEFAULT_SEARCH_BAR_SETTINGS, settings) %}
 <div class="search-bar {{ settings.className }} js-search-bar">
 	<input type="text" class="search-bar__input js-search-bar-input" placeholder="Type to search..." aria-label="search">
 	<button class="search-bar__submit js-search-bar-submit" aria-label="submit search">

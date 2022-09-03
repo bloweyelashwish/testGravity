@@ -14,23 +14,24 @@
 	imageAlt: 'Image placeholder text'
 } %}
 
-{% macro RemarkBlock() %}
+{% macro RemarkBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_REMARK_SETTINGS, settings) %}
 <section class="remark">
 	<div class="remark__container container">
 		<div class="remark__image">
-			<img src="{{ DEFAULT_REMARK_SETTINGS.image }}" alt="{{DEFAULT_REMARK_SETTINGS.imageAlt }}" width="444" height="564">
+			<img src="{{ settings.image }}" alt="{{ settings.imageAlt }}" width="444" height="564">
 		</div>
 		<div class="remark__main-content">
-			<h2 class="remark__title">{{ DEFAULT_REMARK_SETTINGS.title }}</h2>
-			<p class="remark__text">{{ DEFAULT_REMARK_SETTINGS.text.paragraph1 }}</p>
-			<p class="remark__text">{{ DEFAULT_REMARK_SETTINGS.text.paragraph2 }}</p>
+			<h2 class="remark__title">{{ settings.title }}</h2>
+			<p class="remark__text">{{ settings.text.paragraph1 }}</p>
+			<p class="remark__text">{{ settings.text.paragraph2 }}</p>
 			<div class="remark__author-meta">
 				<div class="remark__author-image-wrapper">
-					<img class="remark__author-image" src="{{ DEFAULT_REMARK_SETTINGS.author.image }}" width="65" height="65">
+					<img class="remark__author-image" src="{{ settings.author.image }}" width="65" height="65">
 				</div>
 				<div class="remark__author-details">
-					<div class="remark__author-name">{{DEFAULT_REMARK_SETTINGS.author.name }}</div>
-					<div class="remark__author-position">{{DEFAULT_REMARK_SETTINGS.author.position }}</div>
+					<div class="remark__author-name">{{ settings.author.name }}</div>
+					<div class="remark__author-position">{{ settings.author.position }}</div>
 				</div>
 			</div>
 		</div>

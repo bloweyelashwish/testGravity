@@ -1,6 +1,14 @@
-{% macro SliderArrows(blockPrev, blockNext) %}
+{% set DEFAULT_SLIDER_SETTINGS = {
+	buttons: {
+		prev: '',
+		next: ''
+	}
+} %}
+
+{% macro SliderArrows(settings = {}) %}
+{% set settings = merge(DEFAULT_SLIDER_SETTINGS, settings) %}
 	<div class="arrows flex">
-		<div class="arrows__arrow arrow arrow--prev {{ blockPrev }}"></div>
-		<div class="arrows__arrow arrow arrow--next {{ blockNext }}"></div>
+		<div class="arrows__arrow arrow arrow--prev {{ settings.buttons.prev }}"></div>
+		<div class="arrows__arrow arrow arrow--next {{ settings.buttons.next }}"></div>
 	</div>
 {% endmacro %}

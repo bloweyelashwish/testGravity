@@ -58,22 +58,23 @@
 	]
 } %}
 
-{% macro WorksBlock() %}
+{% macro WorksBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_VIDEO_SETTINGS, settings) %}
 <section class="works" id="works">
 	<div class="works__container container">
 		<div class="works__subtitle">
-			{{ DEFAULT_VIDEO_SETTINGS.subtitle }}
+			{{ settings.subtitle }}
 		</div>
 		<div class="works__main-content">
 			<h2 class="works__title">
-				{{ DEFAULT_VIDEO_SETTINGS.title }}
+				{{ settings.title }}
 			</h2>
 			<nav class="works__menu">
-				{{ SectionMenu(DEFAULT_VIDEO_SETTINGS.menu.links, 'list--flex') }}
+				{{ SectionMenu(settings.menu.links, 'list--flex') }}
 			</nav>
 		</div>
 		<div class="works__set">
-			{% for item in DEFAULT_VIDEO_SETTINGS.works %}
+			{% for item in settings.works %}
 				<div class="works__item">			
 					<div class="works__image">
 						<img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="350" height="450">
@@ -85,8 +86,8 @@
 			{% endfor %}
 		</div>
 		<div class="works__hyperlink">
-			<p class="works__text">{{ DEFAULT_VIDEO_SETTINGS.text }}</p>
-			<a class="works__btn btn btn--primary" href="#" target="_blank">{{ DEFAULT_VIDEO_SETTINGS.link }}</a>
+			<p class="works__text">{{ settings.text }}</p>
+			<a class="works__btn btn btn--primary" href="#" target="_blank">{{ settings.link }}</a>
 		</div>
 	</div>
 </section>

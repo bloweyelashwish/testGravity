@@ -1,8 +1,7 @@
 import merge from 'merge';
-// const merge = require('merge');
 
-export const njkEnv = (env) => {
-  const globals = {
-    merge: (...args) => merge({}, ...args)
-	}
-};
+export const manageEnvironment  = (environment) => {
+  environment.addGlobal('merge', function(...args) {
+    return merge({}, ...args)
+  })
+}

@@ -30,12 +30,13 @@
 	}
 } %}
 
-{% macro HeroBlock() %}
+{% macro HeroBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_HERO_SETTINGS, settings)%}
 <section class="hero" id="home">
 	<div class="hero__container">
 		<article class="hero__main-content">
-			<div class="hero__slider js-slider" data-options="{{ DEFAULT_HERO_SETTINGS.slider.settings | dump }}">
-				{% for slide in DEFAULT_HERO_SETTINGS.slider.slides %}
+			<div class="hero__slider js-slider" data-options="{{ settings.slider.settings | dump }}">
+				{% for slide in settings.slider.slides %}
 					<div class="hero__slide">
 						<h1 class="hero__title">{{ slide.title }}</h1>
 						<p class="hero__description text"> {{ slide.description }}</p>
@@ -61,7 +62,7 @@
 			{{ Video() }}
 		</div>
 		<div class="hero__image">
-			<img src="{{ DEFAULT_HERO_SETTINGS.media.image }}" alt="{{ DEFAULT_HERO_SETTINGS.media.imageAlt }}" height="840" width="665">
+			<img src="{{ settings.media.image }}" alt="{{ settings.media.imageAlt }}" height="840" width="665">
 		</div>
 	</div>
 </section>

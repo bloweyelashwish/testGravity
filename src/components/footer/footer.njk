@@ -2,11 +2,12 @@
 	logo: '@img/icons/logo-footer.svg'
 } %}
 
-{% macro FooterBlock() %}
+{% macro FooterBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_FOOTER_SETTINGS, settings) %}
 <footer class="footer">
 	<div class="footer__container container">
 		<div class="footer__content">
-			<img src="{{ DEFAULT_FOOTER_SETTINGS.logo }}" alt="Logo">
+			<img src="{{ settings.logo }}" alt="Logo">
 		</div>
 	</div>
 </footer>

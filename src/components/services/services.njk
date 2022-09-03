@@ -5,38 +5,6 @@
 {% set DEFAULT_SERVICES_SETTINGS = {
 	title: 'We love work hard and explore new things that’s why we cover lot of things. Check our service list and view details',
 	subtitle: 'services',
-	menu: {
-		links: [
-			{
-				name: 'Multimedia',
-				href: '#'
-			},
-			{
-				name: 'Creative Strategy',
-				href: '#'
-			},
-			{
-				name: 'Interactive design',
-				href: '#'
-			},
-			{
-				name: 'UI/UX',
-				href: '#'
-			},
-			{
-				name: 'Packaging',
-				href: '#'
-			},
-			{
-				name: 'Coding',
-				href: '#'
-			},
-			{
-				name: 'Branding',
-				href: '#'
-			}
-		]
-	},
 	slider: {
 		settings: {
 			infinite: false,
@@ -69,20 +37,21 @@
 	}
 } %}
 
-{% macro ServicesBlock() %}
+{% macro ServicesBlock(settings = {}) %}
+{% set settings = merge(DEFAULT_SERVICES_SETTINGS, settings) %}
 <section class="services" id="services">
 	<div class="services__container">
 		<div class="services__subtitle">
-			{{ DEFAULT_SERVICES_SETTINGS.subtitle }}
+			{{ settings.subtitle }}
 		</div>
 		<h2 class="services__title">
-			{{ DEFAULT_SERVICES_SETTINGS.title }}
+			{{ settings.title }}
 		</h2>
 		<nav class="services__menu">
-			{{ SectionMenu(DEFAULT_SERVICES_SETTINGS.menu.links, 'list--grid') }}
+			{{ SectionMenu() }}
 		</nav>
-		<div class="services__slider js-slider" data-options="{{ DEFAULT_SERVICES_SETTINGS.slider.settings | dump }}">
-			{% for slide in DEFAULT_SERVICES_SETTINGS.slider.slides %}
+		<div class="services__slider js-slider" data-options="{{ settings.slider.settings | dump }}">
+			{% for slide in settings.slider.slides %}
 				<div class="services__slide">
 					<img src="{{ slide.image }}" alt="Alt" width="825" height="500">
 					<div class="services__btn btn btn--center">
@@ -92,7 +61,12 @@
 			{% endfor %}
 		</div>
 		<div class="services__arrows">
-			{{ SliderArrows('js-prev-services', 'js-next-services') }}
+			{{ SliderArrows({
+				buttons: { 
+					prev: 'js-prev-services', 
+					next: 'js-next-services'
+				} 
+			}) }}
 		</div>
 	</div>
 </section>

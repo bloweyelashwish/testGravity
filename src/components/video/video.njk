@@ -6,9 +6,10 @@
 	placeholder: '@img/video-placeholder.jpg'
 } %}
 
-{% macro Video()%}
-<div class="video js-video" data-src="{{ DEFAULT_VIDEO_SETTINGS.source }}">
-	<img class="video__placeholder js-video-placeholder" src="{{ DEFAULT_VIDEO_SETTINGS.placeholder }}" alt="Video placeholder">
+{% macro Video(settings = {})%}
+{% set settings = merge(DEFAULT_VIDEO_SETTINGS, settings) %}
+<div class="video js-video" data-src="{{ settings.source }}">
+	<img class="video__placeholder js-video-placeholder" src="{{settings.placeholder }}" alt="Video placeholder">
 	<div class="video__btn btn btn--center js-video-btn">
 		{{ Btn('button', 'play') }}
 	</div>

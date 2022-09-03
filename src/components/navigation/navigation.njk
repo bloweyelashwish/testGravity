@@ -1,9 +1,31 @@
 {% from '../search-bar/search-bar.njk' import SearchBar %}
 
-{% macro Navigation(menu) %}
+{% set DEFAULT_NAVIGATION_SETTINGS = {
+	menuItems: [
+		{ 
+			title: 'home', 
+			link: '#home' 
+		}, 
+		{ 
+			title: 'services', 
+			link: '#services' 
+		}, 
+		{ 
+			title: 'works', 
+			link: '#works' 
+		},
+		{ 
+			title: 'testimonials', 
+			link: '#testimonials' 
+		}
+	]
+} %}
+
+{% macro Navigation(settings = {}) %}
+{% set settings = merge(DEFAULT_NAVIGATION_SETTINGS, settings) %}
 	<nav class="navigation">
 		<ul class="navigation__list flex">
-			{% for item in menu %}
+			{% for item in settings.menuItems %}
 				<li class="navigation__item">
 					<a href="{{ item.link }}" class="navigation__link">{{ item.title }}</a>
 				</li>

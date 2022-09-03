@@ -1,6 +1,41 @@
-{% macro SectionMenu(menu, modifier) %}
-	<ul class="list {{ modifier }}">
-		{% for link in menu %}
+{% set DEFAULT_MENU_SETTINGS = {
+	menuItems: [
+		{
+			name: 'Multimedia',
+			href: '#'
+		},
+		{
+			name: 'Creative Strategy',
+			href: '#'
+		},
+		{
+			name: 'Interactive design',
+			href: '#'
+		},
+		{
+			name: 'UI/UX',
+			href: '#'
+		},
+		{
+			name: 'Packaging',
+			href: '#'
+		},
+		{
+			name: 'Coding',
+			href: '#'
+		},
+		{
+			name: 'Branding',
+			href: '#'
+		}
+	],
+	modifier: 'list--grid'
+} %}
+
+{% macro SectionMenu(settings = {}) %}
+{% set settings = merge(DEFAULT_MENU_SETTINGS, settings) %}
+	<ul class="list {{ settings.modifier }}">
+		{% for link in settings.menuItems %}
 			<li class="list__item"><a class="list__link" href="{{ link.href }}">{{ link.name }}</a></li>
 		{% endfor %}
 	</ul>
